@@ -1,8 +1,8 @@
 import './globals.css'
 
-import { Inter } from 'next/font/google'
+import { Finger_Paint } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Finger_Paint({ subsets: ['latin'], weight: '400' })
 
 export const metadata = {
   title: 'Vercel AI SDK - Next.js OpenAI Examples',

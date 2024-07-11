@@ -14,7 +14,7 @@ export default function GiftGeneratorForm() {
 	const { hasPrevious } = useGiftGenerator()
 
 	return (
-		<Card className="flex min-w-[600px] flex-col justify-between p-8">
+		<Card className="flex h-3/4 min-w-[600px] flex-col justify-between p-8">
 			<header>
 				<StepsIndicator />
 			</header>

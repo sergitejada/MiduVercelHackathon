@@ -1,8 +1,10 @@
 import styles from "./button.module.css"
 
-interface ButtonProps {}
+interface Props {
+	children: React.ReactNode
+}
 
-function Button({ children }: React.PropsWithChildren<ButtonProps>) {
+function Button({ children }: Props) {
 	return <button className={styles.button}>{children}</button>
 }
 

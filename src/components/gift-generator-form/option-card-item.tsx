@@ -9,7 +9,7 @@ interface Props {
 
 export default function OptionCardItem({ title, src, onSelect }: Props) {
 	return (
-		<Card className="size-60 transition-colors hover:bg-orange-100" onClick={onSelect}>
+		<Card className="size-60 transition-colors hover:cursor-pointer hover:bg-orange-100" onClick={onSelect}>
 			<header>
 				<h3 className="font-semibold">{title}</h3>
 			</header>

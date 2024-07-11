@@ -17,7 +17,6 @@ export default function GiftGeneratorForm() {
 		<Card className="flex min-w-[600px] flex-col justify-between p-8">
 			<header>
 				<StepsIndicator />
-				<h1 className="text-white>Generador de text-6xl font-bold">o-----o------o</h1>
 			</header>
 			<div className="mt-8 flex flex-1 flex-col gap-4">{step === "genre" ? <GenreStep /> : <p>No step</p>}</div>
 			<footer className="flex justify-between">{hasPrevious && <Button onClick={previousStep}>Back</Button>}</footer>

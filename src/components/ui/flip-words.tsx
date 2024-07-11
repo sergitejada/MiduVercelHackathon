@@ -51,16 +51,9 @@ export const FlipWords = ({
           stiffness: 100,
           damping: 10,
         }}
-        exit={{
-          opacity: 0,
-          y: -40,
-          x: 40,
-          filter: "blur(8px)",
-          scale: 2,
-          position: "absolute",
-        }}
+        exit={{}}
         className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
+          "z-10 inline-block relative text-left text-neutral-900 px-2 bg-purple-300",
           className
         )}
         key={currentWord}

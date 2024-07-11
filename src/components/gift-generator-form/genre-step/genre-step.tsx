@@ -17,8 +17,11 @@ export default function GenreStep() {
 
 	return (
 		<>
-			<OptionCardItem src="/assets/man.svg" title="Man" onSelect={() => handleGenreSelected("man")} />
-			<OptionCardItem src="/assets/woman.svg" title="Women" onSelect={() => handleGenreSelected("women")} />
+			<h2 className="mb-10 text-2xl font-bold">Escoge tu género</h2>
+			<div className="grid grid-cols-2 gap-4">
+				<OptionCardItem src="/assets/man.svg" title="Hombre" onSelect={() => handleGenreSelected("man")} />
+				<OptionCardItem src="/assets/woman.svg" title="Women" onSelect={() => handleGenreSelected("women")} />
+			</div>
 		</>
 	)
 }

@@ -3,7 +3,7 @@ import Card from "./ui/card"
 export default function FaqSection() {
 	return (
 		<div className="relative mx-auto flex flex-col items-center gap-20">
-			<h3 className="text-center text-xl font-bold">Como funciona el generador</h3>
+			<h3 className="text-3xl font-semibold">Como funciona el generador</h3>
 
 			<div className="flex w-2/3 items-center gap-10">
 				<span className="text-6xl">1</span>

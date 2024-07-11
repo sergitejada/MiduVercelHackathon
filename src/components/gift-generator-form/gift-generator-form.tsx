@@ -13,7 +13,7 @@ export default function GiftGeneratorForm() {
 	const { hasPrevious } = useGiftGenerator()
 
 	return (
-		<Card className="flex min-w-[600px] cursor-pointer flex-col justify-between p-8">
+		<Card className="flex min-w-[600px] flex-col justify-between p-8">
 			<header>
 				<h1 className="text-white>Generador de text-6xl font-bold">AAAAAA</h1>
 			</header>

@@ -1,6 +1,6 @@
 export type Genre = "man" | "women"
 
-export type AgeRange = "0-12" | "13-18" | "19-30" | "31-50" | "51-70" | "71-100"
+export type AgeRange = "0-12" | "13-18" | "19-30" | "31-50" | "51-70" | ">70"
 
 export type Event = "birthday" | "anniversary" | "graduation" | "wedding" | "christmas" | "valentine" | "other"
 

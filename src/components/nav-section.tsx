@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Logo } from "./ui/logo"
 
 export default function NavSection() {
@@ -5,9 +6,9 @@ export default function NavSection() {
 		<div className="mx-auto flex max-w-screen-2xl items-center justify-between p-4">
 			<Logo alt="Logo" />
 			<nav className="flex gap-8 underline">
-				<a href="#">Como Funciona</a>
-				<a href="#">Ideas Recientes</a>
-				<a href="#">Regalos para</a>
+				<Link href="#como-funciona">Como Funciona</Link>
+				<Link href="#ideas-recientes">Ideas Recientes</Link>
+				<Link href="">Regalos para</Link>
 			</nav>
 		</div>
 	)

@@ -4,8 +4,6 @@ import { streamText } from "ai"
 export async function POST(req: Request) {
 	const { messages } = await req.json()
 
-	console.log("hi")
-
 	try {
 		const result = await streamText({
 			model: openai("gpt-3.5-turbo"),
@@ -18,7 +16,6 @@ export async function POST(req: Request) {
 		return response
 	} catch (e) {
 		console.log(e)
+		return new Response(`Error: ${e}`, { status: 400 })
 	}
-
-	return null
 }

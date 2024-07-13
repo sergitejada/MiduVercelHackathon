@@ -12,8 +12,8 @@ export default async function HomePage() {
 			<NavSection />
 			<div className="flex flex-col">
 				<div className="n relative mx-auto flex max-w-7xl justify-center gap-10 pt-16">
-					<div className="mt-48 flex h-[40rem] flex-col justify-start gap-8 px-4">
-						<h1 className="text-4xl font-extrabold">
+					<div className="mt-40 flex h-[40rem] flex-col justify-start gap-8 px-4">
+						<h1 className="text-4xl font-extrabold leading-[50px]">
 							Encuentra el Regalo Ideal <br />
 							para tu <FlipWords words={words} />
 						</h1>

@@ -8,7 +8,7 @@ interface Props {
 export default function AgeCard({ age, onSelect }: Props) {
 	return (
 		<Card
-			className="flex w-full cursor-pointer flex-col items-center gap-2 rounded-2xl border hover:bg-orange-100"
+			className="flex w-full cursor-pointer flex-col items-center gap-2 rounded-2xl border transition-colors duration-300 hover:bg-orange-100"
 			onClick={onSelect}
 		>
 			<header>

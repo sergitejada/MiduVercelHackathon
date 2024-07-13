@@ -46,7 +46,7 @@ export default function GiftGeneratorForm() {
 				<FormSteps step={step} />
 			</header>
 			<div className="mt-8 flex flex-1 flex-col gap-4">{currentStepComponent ?? <p>No step</p>}</div>
-			<footer className="flex justify-between">
+			<footer className="flex hidden justify-between">
 				{hasPrevious && <Button onClick={previousStep}>Back</Button>}
 				{hasNext && step !== 1 && <Button onClick={nextStep}>Next</Button>}
 			</footer>

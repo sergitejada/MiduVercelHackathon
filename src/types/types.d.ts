@@ -13,5 +13,3 @@ export interface GiftForm {
 	hobbies?: Hobbies[]
 	moreDetails?: string
 }
-
-export type GiftFormStep = keyof GiftForm

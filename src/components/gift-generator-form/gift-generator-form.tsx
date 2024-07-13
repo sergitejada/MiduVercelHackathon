@@ -6,13 +6,14 @@ import { useGiftGenerator } from "@/hooks/use-gift-generator"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
 import { useMemo } from "react"
 import AgeStep from "./age-step/age-step"
+import EventsStep from "./events-step/events-step"
 import FormSteps from "./form-steps-indicator/form-steps-indicator"
 import GenreStep from "./genre-step/genre-step"
 
 const stepComponents = {
 	1: <GenreStep />,
 	2: <AgeStep />,
-	3: <h1>Step 3</h1>,
+	3: <EventsStep />,
 	4: <h1>Step 4</h1>,
 	5: <h1>Step 5</h1>
 }

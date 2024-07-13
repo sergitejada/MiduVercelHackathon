@@ -4,8 +4,8 @@ import Button from "@/components/ui/button"
 import Card from "@/components/ui/card"
 import { useGiftGenerator } from "@/hooks/use-gift-generator"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
+import FormSteps from "./form-steps-indicator/form-steps-indicator"
 import GenreStep from "./genre-step/genre-step"
-import FormSteps from "./steps/form-steps"
 
 export default function GiftGeneratorForm() {
 	const step = useGiftGeneratorFormStore(state => state.step)

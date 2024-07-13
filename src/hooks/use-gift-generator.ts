@@ -5,10 +5,15 @@ export const useGiftGenerator = () => {
 	const step = useGiftGeneratorFormStore(state => state.step)
 
 	const hasPrevious = useMemo(() => {
-		return step !== "genre"
+		return step !== 1
+	}, [step])
+
+	const hasNext = useMemo(() => {
+		return step !== 5
 	}, [step])
 
 	return {
-		hasPrevious
+		hasPrevious,
+		hasNext
 	}
 }

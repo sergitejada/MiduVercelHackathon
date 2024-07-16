@@ -1,3 +1,4 @@
+import NavSection from "@/components/nav-section"
 import "./globals.css"
 
 import { JetBrains_Mono } from "next/font/google"
@@ -12,7 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en" className="scroll-smooth">
-			<body className={inter.className}>{children}</body>
+			<body className={inter.className}>
+				<div className="h-[500px] bg-orange-200">
+					<NavSection />
+					{children}
+				</div>
+			</body>
 		</html>
 	)
 }

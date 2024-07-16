@@ -14,13 +14,6 @@ export default function RegalosParaPage() {
 					</div>
 					<div className="flex flex-wrap justify-center gap-8">
 						<CardGift />
-						<CardGift />
-						<CardGift />
-						<CardGift />
-						<CardGift />
-						<CardGift />
-						<CardGift />
-						<CardGift />
 					</div>
 				</div>
 			</div>

@@ -1,48 +1,46 @@
-"use client"
-
 import Input from "@/components/ui/input"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
-import { Event } from "@/types/types"
-import EventCard from "./event-card"
+import { Hobbies } from "@/types/types"
+import EventCard from "../events-step/event-card"
 
 type ItemType = {
 	title: string
-	value: Event
+	value: Hobbies
 	icon: string
 }
 
 const items: ItemType[] = [
 	{
 		title: "Cumpleaños",
-		value: "anniversary",
+		value: "cooking",
 		icon: "icon-anniversary.svg"
 	},
 	{
 		title: "Navidad",
-		value: "christmas",
+		value: "music",
 		icon: "icon-candy.svg"
 	},
 	{
 		title: "San Valentín",
-		value: "valentine",
+		value: "other",
 		icon: "icon-heart.svg"
 	},
 	{
 		title: "Graduación",
-		value: "graduation",
+		value: "reading",
 		icon: "icon-graduation.svg"
 	}
 ]
 
-export default function EventsStep() {
+export default function HobbiesStep() {
 	const gift = useGiftGeneratorFormStore(state => state.gift)
 	const setGift = useGiftGeneratorFormStore(state => state.setGift)
 	const nextStep = useGiftGeneratorFormStore(state => state.nextStep)
 
-	function handleEventSelected(event: Event) {
+	function handleEventSelected(hobbies: Hobbies[]) {
 		setGift({
 			...gift,
-			event
+			hobbies
 		})
 		nextStep()
 	}
@@ -56,12 +54,12 @@ export default function EventsStep() {
 						key={item.title}
 						title={item.title}
 						icon={item.icon}
-						onSelect={() => handleEventSelected(item.value)}
+						onSelect={() => handleEventSelected([item.value])}
 					/>
 				))}
 				<div className="col-span-2 my-4 flex w-full items-center gap-4">
 					<p>Otro:</p>
-					<Input className="h-10 w-full" placeholder="Boda" />
+					<Input className="h-10 w-full" placeholder="Play league of legends" />
 				</div>
 			</div>
 		</div>

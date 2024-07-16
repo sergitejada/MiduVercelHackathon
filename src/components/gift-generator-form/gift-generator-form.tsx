@@ -9,13 +9,17 @@ import AgeStep from "./age-step/age-step"
 import EventsStep from "./events-step/events-step"
 import FormSteps from "./form-steps-indicator/form-steps-indicator"
 import GenreStep from "./genre-step/genre-step"
+import HobbiesStep from "./hobbies-step/hobbies-step"
+import MoreDetailsStep from "./more-details-step/more-details-step"
+import RelationStep from "./relation-step/relation-step"
 
 const stepComponents = {
 	1: <GenreStep />,
-	2: <AgeStep />,
-	3: <EventsStep />,
-	4: <h1>Step 4</h1>,
-	5: <h1>Step 5</h1>
+	2: <RelationStep />,
+	3: <AgeStep />,
+	4: <EventsStep />,
+	5: <HobbiesStep />,
+	6: <MoreDetailsStep />
 }
 
 export default function GiftGeneratorForm() {
@@ -37,6 +41,8 @@ export default function GiftGeneratorForm() {
 				return stepComponents[4]
 			case 5:
 				return stepComponents[5]
+			case 6:
+				return stepComponents[6]
 		}
 	}, [step])
 
@@ -46,9 +52,9 @@ export default function GiftGeneratorForm() {
 				<FormSteps step={step} />
 			</header>
 			<div className="mt-8 flex flex-1 flex-col gap-4">{currentStepComponent ?? <p>No step</p>}</div>
-			<footer className="flex hidden justify-between">
+			<footer className="mt-4 flex justify-between">
 				{hasPrevious && <Button onClick={previousStep}>Back</Button>}
-				{hasNext && step !== 1 && <Button onClick={nextStep}>Next</Button>}
+				{/* {hasNext && step !== 1 && <Button onClick={nextStep}>Next</Button>} */}
 			</footer>
 			<div className="w-36" />
 		</Card>

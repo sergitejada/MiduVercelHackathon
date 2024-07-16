@@ -16,14 +16,14 @@ export default function GenreStep() {
 	}
 
 	return (
-		<>
-			<h2 className="mb-10 text-2xl font-bold">Escoge tu género</h2>
-			<div className="grid grid-cols-2 gap-4">
+		<div className="mx-auto flex flex-col gap-8">
+			<h2 className="text-center text-2xl font-bold">¿A quién va dirigido tu regalo?</h2>
+			<div className="grid grid-cols-2 gap-8">
 				{/* <OptionCardItem src="/assets/man.svg" title="Hombre" onSelect={() => handleGenreSelected("man")} /> */}
 				<OptionCardItem src="/assets/woman.png" title="Mujer" onSelect={() => handleGenreSelected("women")} />
 				{/* <OptionCardItem src="/assets/woman.svg" title="Women" onSelect={() => handleGenreSelected("women")} /> */}
 				<OptionCardItem src="/assets/man.png" title="Hombre" onSelect={() => handleGenreSelected("man")} />
 			</div>
-		</>
+		</div>
 	)
 }

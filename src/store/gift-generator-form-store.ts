@@ -9,6 +9,7 @@ interface GiftGeneratorFormStore {
 	setGift: (gift: GiftForm) => void
 	nextStep: () => void
 	previousStep: () => void
+	setStep: (step: number) => void
 }
 
 export const useGiftGeneratorFormStore = create<GiftGeneratorFormStore>()((set, get) => ({
@@ -30,5 +31,6 @@ export const useGiftGeneratorFormStore = create<GiftGeneratorFormStore>()((set, 
 		if (step === 1) return
 
 		set({ step: step - 1 })
-	}
+	},
+	setStep: step => set({ step })
 }))

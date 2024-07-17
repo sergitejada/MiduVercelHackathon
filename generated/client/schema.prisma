@@ -20,5 +20,6 @@ model Post {
   id        Int      @id @default(autoincrement())
   title     String
   content   String
+  slug      String
   createdAt DateTime @default(now())
 }

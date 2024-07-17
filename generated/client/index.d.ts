@@ -222,8 +222,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 5.16.2
-   * Query Engine version: 34ace0eb2704183d2c05b60b52fba5c43c13f303
+   * Prisma Client JS version: 5.17.0
+   * Query Engine version: 393aa359c9ad4a4bb28630fb5613f9c281cde053
    */
   export type PrismaVersion = {
     client: string
@@ -1888,6 +1888,7 @@ export namespace Prisma {
     id: number | null
     title: string | null
     content: string | null
+    slug: string | null
     createdAt: Date | null
   }
 
@@ -1895,6 +1896,7 @@ export namespace Prisma {
     id: number | null
     title: string | null
     content: string | null
+    slug: string | null
     createdAt: Date | null
   }
 
@@ -1902,6 +1904,7 @@ export namespace Prisma {
     id: number
     title: number
     content: number
+    slug: number
     createdAt: number
     _all: number
   }
@@ -1919,6 +1922,7 @@ export namespace Prisma {
     id?: true
     title?: true
     content?: true
+    slug?: true
     createdAt?: true
   }
 
@@ -1926,6 +1930,7 @@ export namespace Prisma {
     id?: true
     title?: true
     content?: true
+    slug?: true
     createdAt?: true
   }
 
@@ -1933,6 +1938,7 @@ export namespace Prisma {
     id?: true
     title?: true
     content?: true
+    slug?: true
     createdAt?: true
     _all?: true
   }
@@ -2027,6 +2033,7 @@ export namespace Prisma {
     id: number
     title: string
     content: string
+    slug: string
     createdAt: Date
     _count: PostCountAggregateOutputType | null
     _avg: PostAvgAggregateOutputType | null
@@ -2053,6 +2060,7 @@ export namespace Prisma {
     id?: boolean
     title?: boolean
     content?: boolean
+    slug?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["post"]>
 
@@ -2060,6 +2068,7 @@ export namespace Prisma {
     id?: boolean
     title?: boolean
     content?: boolean
+    slug?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["post"]>
 
@@ -2067,6 +2076,7 @@ export namespace Prisma {
     id?: boolean
     title?: boolean
     content?: boolean
+    slug?: boolean
     createdAt?: boolean
   }
 
@@ -2078,6 +2088,7 @@ export namespace Prisma {
       id: number
       title: string
       content: string
+      slug: string
       createdAt: Date
     }, ExtArgs["result"]["post"]>
     composites: {}
@@ -2475,6 +2486,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Post", 'Int'>
     readonly title: FieldRef<"Post", 'String'>
     readonly content: FieldRef<"Post", 'String'>
+    readonly slug: FieldRef<"Post", 'String'>
     readonly createdAt: FieldRef<"Post", 'DateTime'>
   }
     
@@ -2792,6 +2804,7 @@ export namespace Prisma {
     id: 'id',
     title: 'title',
     content: 'content',
+    slug: 'slug',
     createdAt: 'createdAt'
   };
 
@@ -2934,6 +2947,7 @@ export namespace Prisma {
     id?: IntFilter<"Post"> | number
     title?: StringFilter<"Post"> | string
     content?: StringFilter<"Post"> | string
+    slug?: StringFilter<"Post"> | string
     createdAt?: DateTimeFilter<"Post"> | Date | string
   }
 
@@ -2941,6 +2955,7 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     content?: SortOrder
+    slug?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -2951,6 +2966,7 @@ export namespace Prisma {
     NOT?: PostWhereInput | PostWhereInput[]
     title?: StringFilter<"Post"> | string
     content?: StringFilter<"Post"> | string
+    slug?: StringFilter<"Post"> | string
     createdAt?: DateTimeFilter<"Post"> | Date | string
   }, "id">
 
@@ -2958,6 +2974,7 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     content?: SortOrder
+    slug?: SortOrder
     createdAt?: SortOrder
     _count?: PostCountOrderByAggregateInput
     _avg?: PostAvgOrderByAggregateInput
@@ -2973,6 +2990,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Post"> | number
     title?: StringWithAggregatesFilter<"Post"> | string
     content?: StringWithAggregatesFilter<"Post"> | string
+    slug?: StringWithAggregatesFilter<"Post"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Post"> | Date | string
   }
 
@@ -3025,6 +3043,7 @@ export namespace Prisma {
   export type PostCreateInput = {
     title: string
     content: string
+    slug: string
     createdAt?: Date | string
   }
 
@@ -3032,12 +3051,14 @@ export namespace Prisma {
     id?: number
     title: string
     content: string
+    slug: string
     createdAt?: Date | string
   }
 
   export type PostUpdateInput = {
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3045,6 +3066,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3052,12 +3074,14 @@ export namespace Prisma {
     id?: number
     title: string
     content: string
+    slug: string
     createdAt?: Date | string
   }
 
   export type PostUpdateManyMutationInput = {
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3065,6 +3089,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3186,6 +3211,7 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     content?: SortOrder
+    slug?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -3197,6 +3223,7 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     content?: SortOrder
+    slug?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -3204,6 +3231,7 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     content?: SortOrder
+    slug?: SortOrder
     createdAt?: SortOrder
   }
 

@@ -12,7 +12,7 @@ export interface GiftForm {
 	genre?: Genre
 	relation?: Relation
 	ageRange?: AgeRange
-	event?: Event
-	hobbies?: Hobbies[]
+	event?: Event | string
+	hobbies?: Hobbies[] | string[]
 	moreDetails?: string
 }

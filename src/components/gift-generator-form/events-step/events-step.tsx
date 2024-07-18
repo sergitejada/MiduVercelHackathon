@@ -88,7 +88,12 @@ export default function EventsStep() {
 				))}
 				<div className="col-span-2 my-4 flex w-full items-center gap-4">
 					<p>Otro:</p>
-					<Input className="h-10 w-full" placeholder="Boda" onChange={handleInputCustomEventChanged} />
+					<Input
+						className="h-10 w-full"
+						placeholder="Boda"
+						value={gift?.event}
+						onChange={handleInputCustomEventChanged}
+					/>
 					<Button className="p-1.5" disabled={!gift?.event} onClick={handleCustomEvent}>
 						Siguiente
 					</Button>

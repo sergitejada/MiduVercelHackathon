@@ -91,7 +91,7 @@ export default function EventsStep() {
 					<Input
 						className="h-10 w-full"
 						placeholder="Boda"
-						value={gift?.event}
+						defaultValue={gift?.event}
 						onChange={handleInputCustomEventChanged}
 					/>
 					<Button className="p-1.5" disabled={!gift?.event} onClick={handleCustomEvent}>

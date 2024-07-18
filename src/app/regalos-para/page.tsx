@@ -2,6 +2,7 @@ import CardGift from "@/components/ui/card-gift"
 import { FlipWords } from "@/components/ui/flip-words"
 
 const words = ["Amigo", "Pareja", "Familia"]
+
 export default function RegalosParaPage() {
 	return (
 		<div className="flex flex-col">

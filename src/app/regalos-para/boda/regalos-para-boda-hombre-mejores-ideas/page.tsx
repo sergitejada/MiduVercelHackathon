@@ -1,9 +1,9 @@
 import Image from "next/image"
-import React from "react"
 
 const slug = "regalos-para-boda-hombre-mejores-ideas"
 const title = "Las Mejores Ideas para Sorprender al Novio"
-export default function page() {
+
+export default function RegalosParaPage() {
 	return (
 		<div className="mx-auto mt-20 max-w-6xl">
 			<h1 className="text-center text-3xl font-bold">{title}</h1>

@@ -47,7 +47,7 @@ export default function HobbiesStep() {
 
 	return (
 		<div className="flex w-full flex-col text-center">
-			<h2 className="mb-10 text-2xl font-bold">¿Que evento estas celebrando?</h2>
+			<h2 className="mb-10 text-2xl font-bold">¿Qué hobbies le gustan?</h2>
 			<div className="grid grid-cols-2 gap-4">
 				{items.map(item => (
 					<EventCard

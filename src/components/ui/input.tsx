@@ -3,9 +3,10 @@ import { cn } from "@/lib/utils"
 interface Props {
 	placeholder?: string
 	className?: string
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export default function Input({ placeholder, className }: Props) {
+export default function Input({ placeholder, className, onChange }: Props) {
 	return (
 		<input
 			className={cn(
@@ -13,6 +14,7 @@ export default function Input({ placeholder, className }: Props) {
 				className
 			)}
 			placeholder={placeholder}
+			onChange={onChange}
 		/>
 	)
 }

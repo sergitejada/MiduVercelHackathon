@@ -1,5 +1,6 @@
 "use client"
-import { cn } from "@/utils/cn"
+
+import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "framer-motion"
 import { useCallback, useEffect, useState } from "react"
 

@@ -54,7 +54,6 @@ export default function GiftGeneratorForm() {
 			<div className="mt-8 flex flex-1 flex-col gap-4">{currentStepComponent ?? <p>No step</p>}</div>
 			<footer className="mt-4 flex justify-between">
 				{hasPrevious && <Button onClick={previousStep}>Back</Button>}
-				{/* {hasNext && step !== 1 && <Button onClick={nextStep}>Next</Button>} */}
 			</footer>
 			<div className="w-36" />
 		</Card>

@@ -54,6 +54,7 @@ export default function HobbiesStep() {
 						key={item.title}
 						title={item.title}
 						icon={item.icon}
+						selected={gift?.hobbies?.includes(item.value)}
 						onSelect={() => handleEventSelected([item.value])}
 					/>
 				))}

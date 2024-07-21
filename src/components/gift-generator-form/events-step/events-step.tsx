@@ -74,6 +74,9 @@ export default function EventsStep() {
 		}
 	}
 
+	const isCustom = gift?.event && !items.some(item => item.value === gift?.event)
+	console.log(isCustom)
+
 	return (
 		<div className="flex w-full flex-col text-center">
 			<h2 className="mb-10 text-2xl font-bold">¿Qué evento estás celebrando?</h2>
@@ -83,6 +86,7 @@ export default function EventsStep() {
 						key={item.title}
 						title={item.title}
 						icon={item.icon}
+						selected={gift?.event === item.value}
 						onSelect={() => handleEventSelected(item.value)}
 					/>
 				))}
@@ -91,7 +95,7 @@ export default function EventsStep() {
 					<Input
 						className="h-10 w-full"
 						placeholder="Boda"
-						defaultValue={gift?.event}
+						defaultValue={isCustom ? gift?.event : undefined}
 						onChange={handleInputCustomEventChanged}
 					/>
 					<Button className="p-1.5" disabled={!gift?.event} onClick={handleCustomEvent}>

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils"
 interface Props {
 	children: React.ReactNode
 	className?: string
-	disabled: boolean
+	disabled?: boolean
 	onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 

@@ -7,7 +7,7 @@ export default function MoreDetailsStep() {
 			<h3 className="mb-6 text-sm font-semibold text-gray-700">
 				Escribe aquí cualquier detalle que creas que pueda ayudarnos a encontrar el regalo perfecto.
 			</h3>
-			<Textarea className="w-full" rows={8} />
+			<Textarea className="w-full" maxLength={600} rows={8} />
 		</div>
 	)
 }

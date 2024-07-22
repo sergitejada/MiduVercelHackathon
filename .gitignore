@@ -27,6 +27,9 @@ yarn-error.log*
 # ignore pnpm lock file (problem with deployment)
 pnpm-lock.yaml
 
+# ignore generated folder (created by prismaclient)
+generated
+
 # local env files
 .env*.local
 

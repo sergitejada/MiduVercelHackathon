@@ -98,7 +98,7 @@ export default function EventsStep() {
 						defaultValue={isCustom ? gift?.event : undefined}
 						onChange={handleInputCustomEventChanged}
 					/>
-					<Button className="p-1.5" disabled={!gift?.event} onClick={handleCustomEvent}>
+					<Button className="p-1.5" disabled={!isCustom || !gift?.event} onClick={handleCustomEvent}>
 						Siguiente
 					</Button>
 				</div>

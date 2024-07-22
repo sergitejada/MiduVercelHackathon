@@ -10,7 +10,7 @@ export default function NavSection() {
 			<nav className="flex gap-8 underline">
 				<Link href="#como-funciona">Como Funciona</Link>
 				<Link href="#ideas-recientes">Ideas Recientes</Link>
-				<Link href="/regalos_para">Regalos para</Link>
+				<Link href="/regalos-para">Regalos para</Link>
 			</nav>
 		</div>
 	)

@@ -1,5 +1,6 @@
 import FaqSection from "@/components/faq-section"
 import FooterSection from "@/components/footer-section"
+import FormGeneratorResultsSection from "@/components/form-generator-results-section/form-generator-results-section"
 import GiftGeneratorForm from "@/components/gift-generator-form/gift-generator-form"
 import NewGenerationsSection from "@/components/new-generations-section"
 import { FlipWords } from "../components/ui/flip-words"
@@ -21,6 +22,7 @@ export default async function HomePage() {
 				</div>
 				<GiftGeneratorForm />
 			</div>
+			<FormGeneratorResultsSection />
 			<NewGenerationsSection />
 			<FaqSection />
 			<FooterSection />

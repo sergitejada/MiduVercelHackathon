@@ -16,3 +16,5 @@ export interface GiftForm {
 	hobbies?: Hobbies[] | string[]
 	moreDetails?: string
 }
+
+export type GiftGenerationStatus = "idle" | "generating" | "success" | "error"

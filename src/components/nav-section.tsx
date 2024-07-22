@@ -8,7 +8,7 @@ export default function NavSection() {
 				<Logo alt="Logo" />
 			</Link>
 			<nav className="flex gap-8">
-				<Link className="hover:underline" href="/#como-funciona">
+				<Link className="hover:underline" href="/">
 					Generar Ideas
 				</Link>
 				<Link className="hover:underline" href="/#como-funciona">

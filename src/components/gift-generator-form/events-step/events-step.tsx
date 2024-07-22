@@ -4,6 +4,7 @@ import Button from "@/components/ui/button"
 import Input from "@/components/ui/input"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
 import { Event } from "@/types/types"
+import GiftGeneratorFormFooter from "../gift-generator-form-footer"
 import EventCard from "./event-card"
 
 type ItemType = {
@@ -75,34 +76,37 @@ export default function EventsStep() {
 	}
 
 	const isCustom = gift?.event && !items.some(item => item.value === gift?.event)
-	console.log(isCustom)
 
 	return (
-		<div className="flex w-full flex-col text-center">
-			<h2 className="mb-10 text-2xl font-bold">¿Qué evento estás celebrando?</h2>
-			<div className="grid grid-cols-2 gap-4">
-				{items.map(item => (
-					<EventCard
-						key={item.title}
-						title={item.title}
-						icon={item.icon}
-						selected={gift?.event === item.value}
-						onSelect={() => handleEventSelected(item.value)}
-					/>
-				))}
-				<div className="col-span-2 my-4 flex w-full items-center gap-4">
-					<p>Otro:</p>
-					<Input
-						className="h-10 w-full"
-						placeholder="Boda"
-						defaultValue={isCustom ? gift?.event : undefined}
-						onChange={handleInputCustomEventChanged}
-					/>
-					<Button className="p-1.5" disabled={!isCustom || !gift?.event} onClick={handleCustomEvent}>
-						Siguiente
-					</Button>
+		<>
+			<div className="flex w-full flex-col text-center">
+				<h2 className="mb-10 text-2xl font-bold">¿Qué evento estás celebrando?</h2>
+				<div className="grid grid-cols-2 gap-4">
+					{items.map(item => (
+						<EventCard
+							key={item.title}
+							title={item.title}
+							icon={item.icon}
+							selected={gift?.event === item.value}
+							onSelect={() => handleEventSelected(item.value)}
+						/>
+					))}
+					<div className="col-span-2 my-4 flex w-full items-center gap-4">
+						<p>Otro:</p>
+						<Input
+							className="h-10 w-full"
+							placeholder="Boda"
+							defaultValue={isCustom ? gift?.event : undefined}
+							onChange={handleInputCustomEventChanged}
+						/>
+					</div>
 				</div>
 			</div>
-		</div>
+			<GiftGeneratorFormFooter>
+				<Button disabled={!isCustom || !gift?.event} onClick={handleCustomEvent}>
+					Siguiente
+				</Button>
+			</GiftGeneratorFormFooter>
+		</>
 	)
 }

@@ -1,8 +1,6 @@
 "use client"
 
-import Button from "@/components/ui/button"
 import Card from "@/components/ui/card"
-import { useGiftGenerator } from "@/hooks/use-gift-generator"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
 import { useMemo } from "react"
 import AgeStep from "./age-step/age-step"
@@ -24,10 +22,6 @@ const stepComponents = {
 
 export default function GiftGeneratorForm() {
 	const step = useGiftGeneratorFormStore(state => state.step)
-	const previousStep = useGiftGeneratorFormStore(state => state.previousStep)
-	const nextStep = useGiftGeneratorFormStore(state => state.nextStep)
-
-	const { hasPrevious, hasNext } = useGiftGenerator()
 
 	const currentStepComponent = useMemo(() => {
 		switch (step) {
@@ -47,12 +41,11 @@ export default function GiftGeneratorForm() {
 	}, [step])
 
 	return (
-		<Card className="flex h-[36rem] w-[800px] flex-col justify-between p-8">
+		<Card className="flex h-fit min-h-[38rem] w-[800px] flex-col justify-between p-8">
 			<header>
 				<FormSteps step={step} />
 			</header>
-			<div className="my-8 flex flex-1 flex-col gap-4">{currentStepComponent ?? <p>No step</p>}</div>
-			<footer className="flex justify-between">{hasPrevious && <Button onClick={previousStep}>Back</Button>}</footer>
+			<div className="mt-8 flex flex-1 flex-col justify-between gap-4">{currentStepComponent ?? <p>No step</p>}</div>
 		</Card>
 	)
 }

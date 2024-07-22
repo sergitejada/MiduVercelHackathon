@@ -8,8 +8,8 @@ export default function NavSection() {
 				<Logo alt="Logo" />
 			</Link>
 			<nav className="flex gap-8 underline">
-				<Link href="#como-funciona">Como Funciona</Link>
-				<Link href="#ideas-recientes">Ideas Recientes</Link>
+				<Link href="/#como-funciona">Como Funciona</Link>
+				<Link href="/#ideas-recientes">Ideas Recientes</Link>
 				<Link href="/regalos-para">Regalos para</Link>
 			</nav>
 		</div>

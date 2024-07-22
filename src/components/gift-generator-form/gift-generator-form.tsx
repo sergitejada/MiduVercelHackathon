@@ -47,15 +47,12 @@ export default function GiftGeneratorForm() {
 	}, [step])
 
 	return (
-		<Card className="flex h-3/4 w-[800px] flex-col justify-between p-8">
+		<Card className="flex h-[36rem] w-[800px] flex-col justify-between p-8">
 			<header>
 				<FormSteps step={step} />
 			</header>
-			<div className="mt-8 flex flex-1 flex-col gap-4">{currentStepComponent ?? <p>No step</p>}</div>
-			<footer className="mt-4 flex justify-between">
-				{hasPrevious && <Button onClick={previousStep}>Back</Button>}
-			</footer>
-			<div className="w-36" />
+			<div className="my-8 flex flex-1 flex-col gap-4">{currentStepComponent ?? <p>No step</p>}</div>
+			<footer className="flex justify-between">{hasPrevious && <Button onClick={previousStep}>Back</Button>}</footer>
 		</Card>
 	)
 }

@@ -4,8 +4,9 @@ import { Logo } from "./ui/logo"
 export default function NavSection() {
 	return (
 		<div className="mx-auto flex max-w-screen-2xl items-center justify-between p-4">
-			<Link href="/">
+			<Link href="/" className="flex items-center gap-4">
 				<Logo alt="Logo" />
+				<span className="">GiftHunter</span>
 			</Link>
 			<nav className="flex gap-8">
 				<Link className="hover:underline" href="/">

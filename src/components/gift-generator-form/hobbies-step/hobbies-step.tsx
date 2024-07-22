@@ -65,7 +65,7 @@ export default function HobbiesStep() {
 	}
 
 	function handleNextStep() {
-		if (gift?.hobbies && gift?.hobbies.length > 0) {
+		if (hobbies && hobbies.length > 0) {
 			setGift({
 				...gift,
 				hobbies

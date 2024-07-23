@@ -77,6 +77,8 @@ export default function EventsStep() {
 
 	const isCustom = gift?.event && !items.some(item => item.value === gift?.event)
 
+	console.log(isCustom)
+
 	return (
 		<>
 			<div className="flex w-full flex-col text-center">
@@ -103,7 +105,7 @@ export default function EventsStep() {
 				</div>
 			</div>
 			<GiftGeneratorFormFooter>
-				<Button disabled={!isCustom || !gift?.event} onClick={handleCustomEvent}>
+				<Button disabled={!gift?.event} onClick={handleCustomEvent}>
 					Siguiente
 				</Button>
 			</GiftGeneratorFormFooter>

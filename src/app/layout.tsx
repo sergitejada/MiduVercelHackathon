@@ -1,5 +1,7 @@
-import NavSection from "@/components/nav-section"
 import "./globals.css"
+
+import BackToTop from "@/components/back-to-top"
+import NavSection from "@/components/nav-section"
 
 import { JetBrains_Mono } from "next/font/google"
 
@@ -18,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					<NavSection />
 					{children}
 				</div>
+				<BackToTop />
 			</body>
 		</html>
 	)

@@ -8,6 +8,7 @@ export default function NavSection() {
 				<Logo alt="Logo" />
 				<span className="">GiftHunter</span>
 			</Link>
+
 			<nav className="flex gap-8">
 				<Link className="hover:underline" href="/">
 					Generar Ideas
@@ -18,7 +19,7 @@ export default function NavSection() {
 				<Link className="hover:underline" href="/#ideas-recientes">
 					Ideas Recientes
 				</Link>
-				<Link className="hover:underline" href="/regalos-para">
+				<Link className="hover:underline" href="/blog">
 					Blog
 				</Link>
 			</nav>

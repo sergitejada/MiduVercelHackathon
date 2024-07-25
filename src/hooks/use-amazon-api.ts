@@ -1,4 +1,4 @@
-const amazonPaapi = require("amazon-paapi")
+import amazonPaapi from "paapi5-nodejs-sdk"
 
 const commonParameters = {
 	AccessKey: "",

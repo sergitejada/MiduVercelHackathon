@@ -5,11 +5,12 @@ import Image from "next/image"
 interface Props {
 	title: string
 	icon: string
+	iconStyles?: string
 	selected?: boolean
 	onSelect?: () => void
 }
 
-export default function HobbyCard({ title, icon, selected, onSelect }: Props) {
+export default function HobbyCard({ title, icon, iconStyles, selected, onSelect }: Props) {
 	return (
 		<Card
 			className={cn("min-h-12 cursor-pointer hover:bg-orange-100", selected ? "bg-orange-100" : "bg-white")}
@@ -27,7 +28,15 @@ export default function HobbyCard({ title, icon, selected, onSelect }: Props) {
 						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
 					</svg>
 				</Card>
-				{icon && <Image src={`/assets/${icon}`} width={36} height={36} alt={title} className="h-full max-h-6" />}
+				{icon && (
+					<Image
+						src={`/assets/${icon}`}
+						width={36}
+						height={36}
+						alt={title}
+						className={cn("h-full max-h-6", iconStyles)}
+					/>
+				)}
 				<span className="tracking-wide">{title}</span>
 			</div>
 		</Card>

@@ -11,9 +11,10 @@ type ItemType = {
 	title: string
 	value: Hobbies
 	icon: string
+	iconStyles?: string
 }
 
-const items: ItemType[] = [
+const ITEMS: ItemType[] = [
 	{
 		title: "Music",
 		value: "music",
@@ -22,7 +23,8 @@ const items: ItemType[] = [
 	{
 		title: "Sports",
 		value: "sports",
-		icon: "icon-sports.svg"
+		icon: "icon-sports.svg",
+		iconStyles: "rotate-180"
 	},
 	{
 		title: "Reading",
@@ -102,7 +104,7 @@ export default function HobbiesStep() {
 	}
 
 	const customHobbies = useMemo(
-		() => hobbies?.filter(hobby => !items.map(item => item.value.toString()).includes(hobby)),
+		() => hobbies?.filter(hobby => !ITEMS.map(item => item.value.toString()).includes(hobby)),
 		[hobbies]
 	)
 
@@ -116,11 +118,12 @@ export default function HobbiesStep() {
 					))}
 				</div>
 				<div className="grid grid-cols-2 gap-4">
-					{items.map(item => (
+					{ITEMS.map(item => (
 						<HobbyCard
 							key={item.title}
 							title={item.title}
 							icon={item.icon}
+							iconStyles={item.iconStyles}
 							selected={hobbies.includes(item.value)}
 							onSelect={() => handleEventSelected(item.value)}
 						/>

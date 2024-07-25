@@ -2,12 +2,13 @@ import Card from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
 interface Props {
+	title?: string
 	age: string
 	selected?: boolean
 	onSelect: () => void
 }
 
-export default function AgeCard({ age, selected, onSelect }: Props) {
+export default function AgeCard({ title, age, selected, onSelect }: Props) {
 	return (
 		<Card
 			className={cn(
@@ -17,7 +18,7 @@ export default function AgeCard({ age, selected, onSelect }: Props) {
 			onClick={onSelect}
 		>
 			<header>
-				<h3>{age}</h3>
+				<h3>{title || age}</h3>
 			</header>
 		</Card>
 	)

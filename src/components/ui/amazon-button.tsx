@@ -9,7 +9,7 @@ export default function AmazonButton() {
 				viewBox="0 -1 20 20"
 				version="1.1"
 			>
-				<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				<g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
 					<g id="Dribbble-Light-Preview" transform="translate(-220.000000, -7479.000000)" fill="#000000">
 						<g id="icons" transform="translate(56.000000, 160.000000)">
 							<path

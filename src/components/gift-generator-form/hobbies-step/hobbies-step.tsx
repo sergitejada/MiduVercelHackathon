@@ -17,27 +17,27 @@ const items: ItemType[] = [
 	{
 		title: "Music",
 		value: "music",
-		icon: "icon-anniversary.svg"
+		icon: "icon-music.svg"
 	},
 	{
 		title: "Sports",
 		value: "sports",
-		icon: "icon-candy.svg"
+		icon: "icon-sports.svg"
 	},
 	{
 		title: "Reading",
 		value: "reading",
-		icon: "icon-heart.svg"
+		icon: "icon-reading.svg"
 	},
 	{
 		title: "Cooking",
 		value: "cooking",
-		icon: "icon-graduation.svg"
+		icon: "icon-cooking.svg"
 	},
 	{
 		title: "Travel",
 		value: "travel",
-		icon: "icon-birthday.svg"
+		icon: "icon-travel.svg"
 	},
 	{
 		title: "Eat",

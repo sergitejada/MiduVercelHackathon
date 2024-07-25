@@ -28,26 +28,35 @@ export default function RelationStep() {
 							onSelect={() => handleRelationSelected("couple")}
 						/>
 						<AgeCard
+							title={gift?.genre === "man" ? "Comapañero de trabajo" : "Comapañera de trabajo"}
 							age="Compañero de trabajo"
 							selected={gift?.relation === "coworker"}
 							onSelect={() => handleRelationSelected("coworker")}
 						/>
 						<AgeCard
+							title={gift?.genre === "man" ? "Amigo" : "Amiga"}
 							age="Amigo"
 							selected={gift?.relation === "friend"}
 							onSelect={() => handleRelationSelected("friend")}
 						/>
 						<AgeCard
+							title={gift?.genre === "man" ? "Abuelo" : "Abuela"}
 							age="Abuelo"
 							selected={gift?.relation === "grandfather"}
 							onSelect={() => handleRelationSelected("grandfather")}
 						/>
 						<AgeCard
+							title={gift?.genre === "man" ? "Nieto" : "Nieta"}
 							age="Nieto"
 							selected={gift?.relation === "grandson"}
 							onSelect={() => handleRelationSelected("grandson")}
 						/>
-						<AgeCard age="Hijo" selected={gift?.relation === "son"} onSelect={() => handleRelationSelected("son")} />
+						<AgeCard
+							title={gift?.genre === "man" ? "Hijo" : "Hija"}
+							age="Hijo"
+							selected={gift?.relation === "son"}
+							onSelect={() => handleRelationSelected("son")}
+						/>
 					</div>
 				</div>
 			</div>

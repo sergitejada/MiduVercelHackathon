@@ -1,6 +1,6 @@
 "use client"
 
-import CardGift from "../ui/card-article"
+import CardNewGeneration from "../ui/card-new-generation"
 
 export default function NewGenerationsSection() {
 	// const amazonApi = useAmazonApi()
@@ -10,14 +10,13 @@ export default function NewGenerationsSection() {
 			<div className="container mx-auto flex w-full flex-col gap-20">
 				<h2 className="text-3xl font-semibold">Ideas Recientes</h2>
 				<div className="grid grid-cols-4 gap-12">
-					<CardGift title="Home" link="/" description="a" src="/assets/royal-oak.jpg" />
-					<CardGift title="Home" link="/" description="a" src="/assets/royal-oak.jpg" />
-					<CardGift title="Home" link="/" description="a" src="/assets/royal-oak.jpg" />
-					<CardGift title="Home" link="/" description="a" src="/assets/royal-oak.jpg" />
-					<CardGift title="Home" link="/" description="a" src="/assets/royal-oak.jpg" />
-					<CardGift title="Home" link="/" description="a" src="/assets/royal-oak.jpg" />
-					<CardGift title="Home" link="/" description="a" src="/assets/royal-oak.jpg" />
-					<CardGift title="Home" link="/" description="a" src="/assets/royal-oak.jpg" />
+					<CardNewGeneration
+						name="Basketball Hoop Set"
+						description="Adjustable basketball hoop with a sturdy steel frame and shatterproof backboard. Perfect for indoor or outdoor play."
+					/>
+					<CardNewGeneration name="test" />
+					<CardNewGeneration name="test" />
+					<CardNewGeneration name="test" />
 				</div>
 			</div>
 		</section>

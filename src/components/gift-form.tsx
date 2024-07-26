@@ -1,29 +1,21 @@
 "use client"
 
-import { useChat } from "@ai-sdk/react"
+import { useEffect } from "react"
 
-export default function GiftForm() {
-	const { messages, input, handleSubmit, handleInputChange } = useChat()
+export default function GiftForm({ value }: { value: string }) {
+	console.log("value", value)
 
-	return (
-		<section className="absolute right-0 top-32 mx-auto flex h-[1000px] w-[700px] flex-col justify-between rounded-lg border bg-white p-4 shadow-xl">
-			<div>
-				{messages.map(m => (
-					<div key={m.id} className="whitespace-pre-wrap">
-						{m.role === "user" ? "User: " : "AI: "}
-						{m.content}
-					</div>
-				))}
-			</div>
+	useEffect(() => {
+		console.log(value)
+		fetch("/api/generate-gifts", {
+			method: "POST",
+			body: JSON.stringify({ prompt: value }),
+			headers: {
+				"Content-Type": "application/json"
+			}
+		})
+		// formRef.current?.submit()
+	}, [value])
 
-			<form onSubmit={handleSubmit}>
-				<input
-					className="w-full rounded border border-gray-300 p-2 shadow-md"
-					value={input}
-					placeholder="Say something..."
-					onChange={handleInputChange}
-				/>
-			</form>
-		</section>
-	)
+	return <div />
 }

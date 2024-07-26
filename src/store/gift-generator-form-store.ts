@@ -6,18 +6,21 @@ interface GiftGeneratorFormStore {
 	gift: GiftForm | null
 	step: number
 	giftGenerationStatus: GiftGenerationStatus
+	prompt: string | null
 
 	setGift: (gift: GiftForm) => void
 	nextStep: () => void
 	previousStep: () => void
 	setStep: (step: number) => void
 	setGiftGenerationStatus: (status: GiftGenerationStatus) => void
+	setPrompt: (prompt: string) => void
 }
 
 export const useGiftGeneratorFormStore = create<GiftGeneratorFormStore>()((set, get) => ({
 	gift: null,
 	step: 1,
 	giftGenerationStatus: "idle",
+	prompt: null,
 
 	setGift: gift => set({ gift }),
 	nextStep: () => {
@@ -36,5 +39,6 @@ export const useGiftGeneratorFormStore = create<GiftGeneratorFormStore>()((set, 
 		set({ step: step - 1 })
 	},
 	setStep: step => set({ step }),
-	setGiftGenerationStatus: status => set({ giftGenerationStatus: status })
+	setGiftGenerationStatus: status => set({ giftGenerationStatus: status }),
+	setPrompt: prompt => set({ prompt })
 }))

@@ -1,5 +1,4 @@
 import { GiftForm } from "@/types/types"
-import { useState } from "react"
 
 const PROMPT_CONTEXT = `
 	El usuario te proporcionara 7 características te las adjunto a continuación entre =={característica}==, el usuario hará lo mismo
@@ -16,29 +15,26 @@ const PROMPT_CONTEXT = `
 	La salida siempre será en castellano
 `
 
-export const useGeneratePromptResults = () => {
-	const [prompt, setPrompt] = useState<string | null>(null)
-	const [results, setResults] = useState<string | null>(null)
-
-	function generateResults() {}
-
+export const useGeneratePrompt = () => {
 	function generatePrompt(gift: GiftForm) {
-		const { genre, ageRange, hobbies, relation, moreDetails } = gift
+		const { genre, ageRange, hobbies, event, relation, moreDetails } = gift
 
 		const promptData = []
 
 		promptData.push(`==${genre}==`)
 		promptData.push(`==${ageRange}==`)
 		promptData.push(`==${hobbies!.join(",")}==`)
-		promptData.push(`==${moreDetails}==`)
+		promptData.push(`==${event}==`)
 		promptData.push(`==${relation}==`)
 		promptData.push(`==${moreDetails}==`)
+
+		const prompt = promptData.join("\n")
+
+		return prompt
 	}
 
 	return {
-		prompt,
-		results,
-		generatePrompt,
-		generateResults
+		PROMPT_CONTEXT,
+		generatePrompt
 	}
 }

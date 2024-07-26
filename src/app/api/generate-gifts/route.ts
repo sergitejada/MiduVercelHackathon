@@ -6,15 +6,13 @@ export async function POST(req: Request) {
 
 	try {
 		const { text } = await generateText({
-			model: openai("gpt-4-turbo"),
+			model: openai("gpt-3.5-turbo"),
 			prompt
 		})
 
-		console.log(text)
-
-		return text
+		return new Response(text, { status: 200 })
 	} catch (e) {
-		console.log(e)
+		console.error(e)
 		return new Response(`Error: ${e}`, { status: 400 })
 	}
 }

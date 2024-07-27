@@ -1,15 +1,10 @@
 "use client"
 
-import { useGeneratePrompt } from "@/hooks/use-generate-prompt"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
-import GiftForm from "../gift-form"
 
 export default function FormGeneratorResultsSection() {
-	const gift = useGiftGeneratorFormStore(state => state.gift)
 	const giftGenerationStatus = useGiftGeneratorFormStore(state => state.giftGenerationStatus)
-	const prompt = useGiftGeneratorFormStore(state => state.prompt)
-
-	const { PROMPT_CONTEXT } = useGeneratePrompt()
+	const results = useGiftGeneratorFormStore(state => state.results)
 
 	if (giftGenerationStatus === "idle") return null
 
@@ -18,14 +13,19 @@ export default function FormGeneratorResultsSection() {
 			{giftGenerationStatus === "generating" && (
 				<>
 					<p className="text-center text-xl">Generating gifts...</p>
-					{prompt && <GiftForm value={prompt} />}
 				</>
 			)}
 			{giftGenerationStatus === "error" && <p className="text-center text-xl text-red-600">Error</p>}
 			{giftGenerationStatus === "success" && (
 				<>
-					<h2>Results</h2>
-					<p>Results will be shown here</p>
+					<h2 className="text-4xl font-semibold">Results</h2>
+					<div className="mt-8">
+						{results?.map((result, index) => (
+							<p key={index} className="text-lg">
+								{result}
+							</p>
+						))}
+					</div>
 				</>
 			)}
 		</section>

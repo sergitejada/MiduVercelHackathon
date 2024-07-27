@@ -8,8 +8,8 @@ import { JetBrains_Mono } from "next/font/google"
 const inter = JetBrains_Mono({ subsets: ["latin"], weight: "400" })
 
 export const metadata = {
-	title: "Vercel AI SDK - Next.js OpenAI Examples",
-	description: "Examples of using the Vercel AI SDK with Next.js and OpenAI."
+	title: "GiftHunter",
+	description: "Generador de regalos con IA"
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

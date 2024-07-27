@@ -1,8 +1,8 @@
 interface Props {
-	only_logo?: boolean
+	onlyLogo?: boolean
 }
 
-export default function AmazonButton({ only_logo = false }: Props) {
+export default function AmazonButton({ onlyLogo = false }: Props) {
 	return (
 		<div className="flex w-full items-center justify-center">
 			<button className="flex items-center gap-2 rounded-lg border border-yellow-500 bg-yellow-400 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-yellow-500 active:bg-yellow-600">
@@ -25,8 +25,7 @@ export default function AmazonButton({ only_logo = false }: Props) {
 						</g>
 					</g>
 				</svg>
-
-				{!only_logo && <span>Ver en Amazon</span>}
+				{!onlyLogo && <span>Ver en Amazon</span>}
 			</button>
 		</div>
 	)

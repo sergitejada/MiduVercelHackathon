@@ -31,7 +31,7 @@ export default function CardNewGeneration({ name, description }: Props) {
 						!isFlipped && "transition-transform hover:scale-105"
 					)}
 				>
-					<Image src="/assets/present.svg" alt="Gift" width={350} height={350} className="rounded" />
+					<Image src="/assets/present.svg" alt="Gift" width={350} height={350} className="mx-auto rounded" />
 					<p className="text-center">CLICK PARA REVELAR</p>
 				</Card>
 				<Card className="flex h-[30rem] flex-col gap-8 transition-none">

@@ -2,6 +2,7 @@ import FaqSection from "@/components/faq-section"
 import FooterSection from "@/components/footer-section"
 import FormGeneratorResultsSection from "@/components/form-generator-results-section/form-generator-results-section"
 import GiftGeneratorForm from "@/components/gift-generator-form/gift-generator-form"
+import InfoSection from "@/components/info-section"
 import NewGenerationsSection from "@/components/new-generations-section/new-generations-section"
 import { FlipWords } from "../components/ui/flip-words"
 
@@ -18,11 +19,12 @@ export default async function HomePage() {
 							para tu <FlipWords words={words} />
 						</h1>
 						<h2 className="text-sm font-semibold text-gray-700">
-							Facilita la búsqueda de regalos con sugerencias personalizadas basadas en inteligencia artificial.
+							Comienza a descubrir regalos perfectos hoy mismo con nuestra herramienta impulsada por IA.
 						</h2>
 					</div>
 					<GiftGeneratorForm />
 				</div>
+				<InfoSection />
 				<FormGeneratorResultsSection />
 				<NewGenerationsSection />
 				<FaqSection />

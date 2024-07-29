@@ -1,6 +1,6 @@
 export default function InfoSection() {
 	return (
-		<div className="bg-gradient-to-b from-neutral-100 to-neutral-50 py-10">
+		<div className="bg-gradient-to-b from-neutral-100 to-neutral-50 py-32">
 			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 				<div className="rounded-lg bg-white p-6 shadow-md">
 					<h2 className="mb-2 text-2xl font-semibold text-orange-500">Personaliza Cada Ocasión</h2>

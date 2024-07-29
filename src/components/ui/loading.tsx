@@ -13,7 +13,7 @@ export default function Loading() {
 			>
 				<animate attributeName="stroke-dashoffset" from="251.2" to="0" dur="2s" repeatCount="indefinite" />
 			</circle>
-			<line x1="50" y1="10" x2="50" y2="20" stroke="#000" stroke-width="5">
+			<line x1="50" y1="10" x2="50" y2="20" stroke="#000" strokeWidth="5">
 				<animateTransform
 					attributeName="transform"
 					type="rotate"
@@ -23,7 +23,7 @@ export default function Loading() {
 					repeatCount="indefinite"
 				/>
 			</line>
-			<line x1="50" y1="90" x2="50" y2="80" stroke="#000" stroke-width="5">
+			<line x1="50" y1="90" x2="50" y2="80" stroke="#000" strokeWidth="5">
 				<animateTransform
 					attributeName="transform"
 					type="rotate"
@@ -33,7 +33,7 @@ export default function Loading() {
 					repeatCount="indefinite"
 				/>
 			</line>
-			<line x1="10" y1="50" x2="20" y2="50" stroke="#000" stroke-width="5">
+			<line x1="10" y1="50" x2="20" y2="50" stroke="#000" strokeWidth="5">
 				<animateTransform
 					attributeName="transform"
 					type="rotate"
@@ -43,7 +43,7 @@ export default function Loading() {
 					repeatCount="indefinite"
 				/>
 			</line>
-			<line x1="90" y1="50" x2="80" y2="50" stroke="#000" stroke-width="5">
+			<line x1="90" y1="50" x2="80" y2="50" stroke="#000" strokeWidth="5">
 				<animateTransform
 					attributeName="transform"
 					type="rotate"

@@ -13,13 +13,6 @@ model Gifts {
   id        	Int      @id @default(autoincrement())
   name      	String
   description String
-  createdAt 	DateTime @default(now())
-}
-
-model Post {
-	id            Int      @id @default(autoincrement())
-  title        	String
-  content       String
-	slug 					String
-  createdAt     DateTime @default(now())
+  images 			String
+	createdAt 	DateTime @default(now())
 }

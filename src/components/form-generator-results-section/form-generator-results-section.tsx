@@ -22,22 +22,16 @@ export default function FormGeneratorResultsSection() {
 
 	return (
 		<section ref={formGeneratorResultsRef} id="formGeneratorResults">
-			<div className="mb-40 min-h-[50rem] bg-orange-200 p-8 py-24">
-				<div className="container mx-auto">
+			<div className="mb-40 min-h-[50rem] bg-orange-200 py-24">
+				<div className="container mx-auto flex w-full flex-col gap-20">
 					<h2 className="text-4xl font-semibold">Results</h2>
-					{status === "generating" && (
-						<div className="mt-8">
-							<h2 className="text-center text-4xl">Generating gifts...</h2>
-						</div>
-					)}
-					{status === "error" && <p className="text-center text-xl text-red-600">Error</p>}
+					{status === "generating" && <h2 className="text-center text-4xl">Generating gifts...</h2>}
+					{status === "error" && <p className="text-center text-4xl text-red-900">Error</p>}
 					{status === "success" && (
 						<>
-							<div className="mt-8 flex justify-around gap-4">
+							<div className="grid gap-12 lg:grid-cols-2 xl:grid-cols-4">
 								{results?.map((result, index) => (
-									<div key={index}>
-										<CardNewGeneration name={result.producto} description={result.descripcion} />
-									</div>
+									<CardNewGeneration key={index} name={result.producto} description={result.descripcion} />
 								))}
 							</div>
 							<div className="mt-8 text-center">

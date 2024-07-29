@@ -28,7 +28,7 @@ export default function CardNewGeneration({ name, description, isFlipped: initIs
 				<Card
 					onClick={handleFlipCard}
 					className={cn(
-						"flex h-[28rem] w-full max-w-80 cursor-pointer flex-col justify-between rounded-[10px] border-[3px] border-black bg-white p-[10px] drop-shadow-[-3px_4px_0_rgba(0,0,0,1)]",
+						"flex h-[28rem] w-full cursor-pointer flex-col justify-between rounded-[10px] border-[3px] border-black bg-white p-[10px] drop-shadow-[-3px_4px_0_rgba(0,0,0,1)]",
 						!isFlipped && "transition-transform hover:scale-105"
 					)}
 				>

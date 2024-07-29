@@ -2,6 +2,7 @@
 
 import { useCleanResults } from "@/hooks/use-clean-results"
 import { useEffect, useRef } from "react"
+import Button from "../ui/button"
 import CardNewGeneration from "../ui/card-new-generation"
 
 export default function FormGeneratorResultsSection() {
@@ -34,10 +35,8 @@ export default function FormGeneratorResultsSection() {
 									<CardNewGeneration key={index} name={result.producto} description={result.descripcion} />
 								))}
 							</div>
-							<div className="mt-8 text-center">
-								<button className="rounded-2xl border bg-orange-500 px-2 py-2 text-white hover:bg-orange-600">
-									Generar mas regalos
-								</button>
+							<div className="mx-auto mt-8">
+								<Button>Generar mas regalos</Button>
 							</div>
 						</>
 					)}

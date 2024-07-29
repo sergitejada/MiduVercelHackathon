@@ -6,6 +6,7 @@ import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
 import { useEffect, useRef } from "react"
 import Button from "../ui/button"
 import CardNewGeneration from "../ui/card-new-generation"
+import Loading from "../ui/loading"
 
 export default function FormGeneratorResultsSection() {
 	const gift = useGiftGeneratorFormStore(state => state.gift)
@@ -35,10 +36,17 @@ export default function FormGeneratorResultsSection() {
 
 	return (
 		<section ref={formGeneratorResultsRef} id="formGeneratorResults">
-			<div className="mb-40 min-h-[50rem] bg-orange-200 py-24">
+			<div className="mb-40 min-h-[60rem] bg-orange-200 py-24">
 				<div className="container mx-auto flex w-full flex-col gap-20">
 					<h2 className="text-center text-4xl font-semibold">Results</h2>
-					{status === "generating" && <h2 className="text-center text-4xl">Generating gifts...</h2>}
+					{status === "generating" && (
+						<div className="flex flex-col justify-center gap-8">
+							<h2 className="mx-auto text-center text-2xl">Generating gifts...</h2>
+							<div className="mx-auto">
+								<Loading />
+							</div>
+						</div>
+					)}
 					{status === "error" && <p className="text-center text-4xl text-red-900">Error</p>}
 					{status === "success" && (
 						<>

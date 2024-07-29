@@ -37,7 +37,7 @@ export default function FormGeneratorResultsSection() {
 		<section ref={formGeneratorResultsRef} id="formGeneratorResults">
 			<div className="mb-40 min-h-[50rem] bg-orange-200 py-24">
 				<div className="container mx-auto flex w-full flex-col gap-20">
-					<h2 className="text-4xl font-semibold">Results</h2>
+					<h2 className="text-center text-4xl font-semibold">Results</h2>
 					{status === "generating" && <h2 className="text-center text-4xl">Generating gifts...</h2>}
 					{status === "error" && <p className="text-center text-4xl text-red-900">Error</p>}
 					{status === "success" && (

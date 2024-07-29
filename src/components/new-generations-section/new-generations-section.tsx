@@ -8,7 +8,7 @@ export default function NewGenerationsSection() {
 	return (
 		<section id="ideas-recientes" className="relative py-20">
 			<div className="container mx-auto flex w-full flex-col gap-20">
-				<h2 className="text-3xl font-semibold">Ideas Recientes</h2>
+				<h2 className="text-center text-3xl font-semibold">Ideas Recientes</h2>
 				<div className="grid gap-12 lg:grid-cols-2 xl:grid-cols-4">
 					<CardNewGeneration
 						name="Basketball Hoop Set"

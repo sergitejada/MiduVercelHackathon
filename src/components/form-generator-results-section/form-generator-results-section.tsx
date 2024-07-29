@@ -1,33 +1,26 @@
 "use client"
 
-import { useCleanResponse } from "@/hooks/use-clean-response"
-import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
+import { useCleanResults } from "@/hooks/use-clean-results"
 import CardNewGeneration from "../ui/card-new-generation"
 
 export default function FormGeneratorResultsSection() {
-	const giftGenerationStatus = useGiftGeneratorFormStore(state => state.giftGenerationStatus)
-	const results = useGiftGeneratorFormStore(state => state.results)
+	const { status, results } = useCleanResults()
 
-	const cleanResults = useCleanResponse(results ? results.join("") : "")
-
-	console.log(results)
-	console.log(cleanResults)
-
-	if (giftGenerationStatus === "idle") return null
+	if (status === "idle") return null
 
 	return (
 		<section className="container mx-auto mb-40 rounded-[10px] border-4 border-black p-8">
-			{giftGenerationStatus === "generating" && (
+			{status === "generating" && (
 				<>
 					<p className="text-center text-xl">Generating gifts...</p>
 				</>
 			)}
-			{giftGenerationStatus === "error" && <p className="text-center text-xl text-red-600">Error</p>}
-			{giftGenerationStatus === "success" && (
+			{status === "error" && <p className="text-center text-xl text-red-600">Error</p>}
+			{status === "success" && (
 				<>
 					<h2 className="text-4xl font-semibold">Results</h2>
 					<div className="mt-8 flex justify-around gap-4">
-						{cleanResults?.map((result, index) => (
+						{results?.map((result, index) => (
 							<div key={index}>
 								<CardNewGeneration name={result.producto} description={result.descripcion} />
 							</div>

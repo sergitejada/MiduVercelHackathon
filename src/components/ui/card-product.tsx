@@ -18,7 +18,7 @@ export default function CardProduct({ src, title, description, link }: Props) {
 			<div className="mt-6 flex flex-col gap-4">
 				<h4>{title}</h4>
 				<div className="flex flex-row gap-4">
-					<GoogleButton />
+					<GoogleButton url="" />
 					<AmazonButton />
 					<AmazonButton />
 				</div>

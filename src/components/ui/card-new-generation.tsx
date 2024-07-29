@@ -12,10 +12,11 @@ interface Props {
 	name: string
 	description?: string
 	img?: string
+	isFlipped?: boolean
 }
 
-export default function CardNewGeneration({ name, description }: Props) {
-	const [isFlipped, setIsFlipped] = useState(false)
+export default function CardNewGeneration({ name, description, isFlipped: initIsFlipped }: Props) {
+	const [isFlipped, setIsFlipped] = useState(initIsFlipped || false)
 
 	function handleFlipCard() {
 		setIsFlipped(prevState => !prevState)

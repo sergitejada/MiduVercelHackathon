@@ -13,10 +13,11 @@ export default function NewGenerationsSection() {
 					<CardNewGeneration
 						name="Basketball Hoop Set"
 						description="Adjustable basketball hoop with a sturdy steel frame and shatterproof backboard. Perfect for indoor or outdoor play."
+						isFlipped
 					/>
-					<CardNewGeneration name="test" />
-					<CardNewGeneration name="test" />
-					<CardNewGeneration name="test" />
+					<CardNewGeneration name="test" isFlipped />
+					<CardNewGeneration name="test" isFlipped />
+					<CardNewGeneration name="test" isFlipped />
 				</div>
 			</div>
 		</section>

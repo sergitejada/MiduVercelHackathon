@@ -4,8 +4,9 @@ import { generateText } from "ai"
 // https://nextjs.org/docs/app/building-your-application/routing/route-handlers
 import { NextResponse } from "next/server"
 
-const context =
-	"El usuario te proporcionara 7 características te las adjunto a continuación entre =={característica}==, el usuario hará lo mismo\n-Genero-,-Edad-,-Hobby-,-Evento-,-Tipo de persona-,-Presupuesto-,-Descripción-\n\nCon las características proporcionadas recomienda regalos acorde a la persona\n\nLa salida siempre serán 4 recomendaciones ';{articulo}:{descripción};'\nNo añadas ningún texto de introducción al principio de la respuesta, siempre devuelve las recomendaciones directamente\nNo añadas en ningún momento el precio \nLa respuesta siempre será el nombre del articulo y una pequeña descripción máximo 200 caracteres para la descripción\nNo numeres los resultados, no le pongas ningún símbolo en la parte inicial\nNunca le digas al usuario que necesitas mas información\nLa salida siempre será en castellano"
+const CONTEXT =
+	"El usuario te proporcionará 7 características entre =={característica}==. Las características son: -Genero-, -Edad-, -Hobby-, -Evento-, -Tipo de persona-, -Presupuesto-, -Descripción-. Con las características proporcionadas, recomienda regalos acorde a la persona. La salida siempre serán 4 recomendaciones en el formato exacto ';{articulo}:{descripción};'. No añadas ningún texto de introducción al principio de la respuesta. Devuelve las recomendaciones directamente. No añadas en ningún momento el precio. La respuesta siempre será el nombre del artículo y una pequeña descripción de máximo 200 caracteres. No numeres los resultados, ni pongas ningún símbolo al inicio. Nunca le digas al usuario que necesitas más información. La salida siempre será en castellano. Las recomendaciones deben terminar siempre con un punto y coma al final de cada frase."
+
 export async function POST(req: Request) {
 	const { prompt } = await req.json()
 
@@ -15,7 +16,7 @@ export async function POST(req: Request) {
 	try {
 		const { text } = await generateText({
 			model: openai("gpt-3.5-turbo"),
-			system: context,
+			system: CONTEXT,
 			prompt
 		})
 

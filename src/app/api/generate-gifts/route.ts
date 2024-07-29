@@ -1,5 +1,7 @@
 import { openai } from "@ai-sdk/openai"
 import { generateText } from "ai"
+// Response.json() is only valid from TypeScript 5.2. If you use a lower TypeScript version, you can use NextResponse.json()
+// https://nextjs.org/docs/app/building-your-application/routing/route-handlers
 import { NextResponse } from "next/server"
 
 const context =

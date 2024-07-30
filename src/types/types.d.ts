@@ -18,3 +18,7 @@ export interface GiftForm {
 }
 
 export type GiftGenerationStatus = "idle" | "generating" | "success" | "error"
+
+export interface AmazonProduct {
+	imageUrl: string
+}

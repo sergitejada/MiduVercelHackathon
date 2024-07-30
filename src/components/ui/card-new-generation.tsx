@@ -15,7 +15,9 @@ interface Props {
 	isFlipped?: boolean
 }
 
-export default function CardNewGeneration({ name, description, isFlipped: initIsFlipped }: Props) {
+const FALLBACK_IMAGE = "/assets/present.svg"
+
+export default function CardNewGeneration({ name, description, img, isFlipped: initIsFlipped }: Props) {
 	const [isFlipped, setIsFlipped] = useState(initIsFlipped || false)
 
 	function handleFlipCard() {
@@ -32,12 +34,27 @@ export default function CardNewGeneration({ name, description, isFlipped: initIs
 						!isFlipped && "transition-transform hover:scale-105"
 					)}
 				>
-					<Image src="/assets/present.svg" alt="Gift" width={350} height={350} className="mx-auto rounded" />
+					<Image
+						src="/assets/present.svg"
+						alt="Gift"
+						width={350}
+						height={350}
+						className="mx-auto rounded"
+						unoptimized
+					/>
 					<p className="text-center">CLICK PARA REVELAR</p>
 				</Card>
 				<Card className="flex h-[28rem] w-full max-w-80 flex-col justify-between gap-8 transition-none">
 					<div className="flex flex-col gap-8">
-						<Image src="/assets/royal-oak.jpg" alt="Image" width={350} height={350} className="rounded" />
+						<Image
+							src={img ?? FALLBACK_IMAGE}
+							alt="Image"
+							width={200}
+							height={250}
+							className="mx-auto aspect-square rounded"
+							priority
+							unoptimized
+						/>
 						<div className="flex flex-col gap-2">
 							<h3 className="font-semibold">{name}</h3>
 							<p className="text-xs text-gray-600">{description}</p>

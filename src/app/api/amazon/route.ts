@@ -1,126 +1,78 @@
+import { AmazonProduct } from "@/types/types"
 import { NextResponse } from "next/server"
 import ProductAdvertisingAPIv1 from "paapi5-nodejs-sdk"
 
-const HOST = "webservices.amazon.es"
-const REGION = "eu-west-1"
-
-const commonParameters = {
-	AccessKey: "",
-	SecretKey: "",
-	PartnerTag: "stpesca-21", // yourtag-20
-	PartnerType: "Associates", // Default value is Associates.
-	Marketplace: "www.amazon.es" // Default value is US. Note: Host and Region are predetermined based on the marketplace value. There is no need for you to add Host and Region as soon as you specify the correct Marketplace value. If your region is not US or .com, please make sure you add the correct Marketplace value.
+const CLIENT_PARAMETERS = {
+	AccessKey: process.env.AMAZON_ACCESS_KEY,
+	SecretKey: process.env.AMAZON_SECRET_KEY,
+	Host: "webservices.amazon.es",
+	Region: "eu-west-1"
 }
 
-const requestParameters = {
-	Keywords: "Harry Potter",
-	SearchIndex: "Books",
-	ItemCount: 2,
-	Resources: ["Images.Primary.Medium", "ItemInfo.Title", "Offers.Listings.Price"]
-}
-
-export async function GET(req: Request) {
-	// const {} = await req.json()
-
-	const defaultClient = ProductAdvertisingAPIv1.ApiClient.instance
-	defaultClient.accessKey = process.env.AMAZON_ACCESS_KEY
-	defaultClient.secretKey = process.env.AMAZON_SECRET_KEY
-
-	defaultClient.host = HOST
-	defaultClient.region = REGION
-
-	const api = new ProductAdvertisingAPIv1.DefaultApi(defaultClient)
-	const searchItemsRequest = new ProductAdvertisingAPIv1.SearchItemsRequest()
-
+const SEARCH_PARAMETERS = {
 	/** Enter your partner tag (store/tracking id) and partner type */
-	searchItemsRequest["PartnerTag"] = "stpesca-21"
-	searchItemsRequest["PartnerType"] = "Associates"
-
-	/** Specify Keywords */
-	searchItemsRequest["Keywords"] = "Harry Potter"
-
-	/**
-	 * Specify the category in which search request is to be made
-	 * For more details, refer: https://webservices.amazon.com/paapi5/documentation/use-cases/organization-of-items-on-amazon/search-index.html
-	 */
-	searchItemsRequest["SearchIndex"] = "Books"
-
+	PartnerTag: "stpesca-21",
+	PartnerType: "Associates",
 	/** Specify item count to be returned in search result */
-	searchItemsRequest["ItemCount"] = 1
-
+	ItemCount: 1,
 	/**
 	 * Choose resources you want from SearchItemsResource enum
-	 * For more details, refer: https://webservices.amazon.com/paapi5/documentation/search-items.html#resources-parameter
+	 * For more details, refer: https://webservices.amazon.com/paapi5/documentation/search-items.html#resources-parameter OLD PARAMS: "ItemInfo.Title", "Offers.Listings.Price"
 	 */
-	searchItemsRequest["Resources"] = ["Images.Primary.Medium", "ItemInfo.Title", "Offers.Listings.Price"]
+	Resources: ["Images.Primary.Large"]
+}
 
-	// .then(
-	// 	function (data) {
-	// 		onSuccess(data)
-	// 	},
-	// 	function (error) {
-	// 		onError(error)
-	// 	}
-	// )
+export async function POST(req: Request) {
+	const { productName } = await req.json()
 
-	console.log("hi")
+	const defaultClient = ProductAdvertisingAPIv1.ApiClient.instance
+	defaultClient.accessKey = CLIENT_PARAMETERS.AccessKey
+	defaultClient.secretKey = CLIENT_PARAMETERS.SecretKey
+	defaultClient.host = CLIENT_PARAMETERS.Host
+	defaultClient.region = CLIENT_PARAMETERS.Region
 
-	console.log(searchItemsRequest)
+	const searchItemsRequest = new ProductAdvertisingAPIv1.SearchItemsRequest()
+	searchItemsRequest.PartnerTag = SEARCH_PARAMETERS.PartnerTag
+	searchItemsRequest.PartnerType = SEARCH_PARAMETERS.PartnerType
+	searchItemsRequest.ItemCount = SEARCH_PARAMETERS.ItemCount
+	searchItemsRequest.Resources = SEARCH_PARAMETERS.Resources
+	searchItemsRequest.Keywords = productName
 
 	try {
-		console.time("time")
+		const api = new ProductAdvertisingAPIv1.DefaultApi(defaultClient)
 		const response = await api.searchItems(searchItemsRequest)
+		const result = onSuccess(response)
 
-		console.timeEnd("time")
-		console.log("hifinally")
-
-		return NextResponse.json("A", { status: 200 })
+		return NextResponse.json(result, { status: 200 })
 	} catch (e) {
-		console.log("error")
-		console.error(e)
+		onError(e)
 		return NextResponse.json(`Error: ${e}`, { status: 400 })
 	}
 }
 
-function onSuccess(data: any) {
-	console.log("API called successfully.")
-	var searchItemsResponse = ProductAdvertisingAPIv1.SearchItemsResponse.constructFromObject(data)
-	console.log("Complete Response: \n" + JSON.stringify(searchItemsResponse, null, 1))
-	if (searchItemsResponse["SearchResult"] !== undefined) {
-		console.log("Printing First Item Information in SearchResult:")
-		var item_0 = searchItemsResponse["SearchResult"]["Items"][0]
-		if (item_0 !== undefined) {
-			if (item_0["ASIN"] !== undefined) {
-				console.log("ASIN: " + item_0["ASIN"])
-			}
-			if (item_0["DetailPageURL"] !== undefined) {
-				console.log("DetailPageURL: " + item_0["DetailPageURL"])
-			}
-			if (
-				item_0["ItemInfo"] !== undefined &&
-				item_0["ItemInfo"]["Title"] !== undefined &&
-				item_0["ItemInfo"]["Title"]["DisplayValue"] !== undefined
-			) {
-				console.log("Title: " + item_0["ItemInfo"]["Title"]["DisplayValue"])
-			}
-			if (
-				item_0["Offers"] !== undefined &&
-				item_0["Offers"]["Listings"] !== undefined &&
-				item_0["Offers"]["Listings"][0]["Price"] !== undefined &&
-				item_0["Offers"]["Listings"][0]["Price"]["DisplayAmount"] !== undefined
-			) {
-				console.log("Buying Price: " + item_0["Offers"]["Listings"][0]["Price"]["DisplayAmount"])
+function onSuccess(data: any): AmazonProduct | null {
+	const searchItemsResponse = ProductAdvertisingAPIv1.SearchItemsResponse.constructFromObject(data)
+
+	if (searchItemsResponse["SearchResult"]) {
+		const item0 = searchItemsResponse["SearchResult"]["Items"][0]
+		if (item0) {
+			const image = item0["Images"]["Primary"]["Large"]["URL"]
+
+			return {
+				imageUrl: image
 			}
 		}
 	}
-	if (searchItemsResponse["Errors"] !== undefined) {
+	if (searchItemsResponse["Errors"]) {
 		console.log("Errors:")
 		console.log("Complete Error Response: " + JSON.stringify(searchItemsResponse["Errors"], null, 1))
 		console.log("Printing 1st Error:")
-		var error_0 = searchItemsResponse["Errors"][0]
-		console.log("Error Code: " + error_0["Code"])
-		console.log("Error Message: " + error_0["Message"])
+		const error0 = searchItemsResponse["Errors"][0]
+		console.log("Error Code: " + error0["Code"])
+		console.log("Error Message: " + error0["Message"])
 	}
+
+	return null
 }
 
 function onError(error: any) {

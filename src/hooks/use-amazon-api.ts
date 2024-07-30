@@ -1,24 +1,25 @@
-import { useEffect } from "react"
+import { AmazonProduct } from "@/types/types"
 
 export const useAmazonApi = () => {
-	useEffect(() => {
-		fetch("/api/amazon", {
+	async function fetchAmazonProduct(productName: string): Promise<AmazonProduct> {
+		const response = await fetch("/api/amazon", {
 			headers: {
 				"Content-Type": "application/json"
-			}
+			},
+			method: "POST",
+			body: JSON.stringify({
+				productName
+			})
 		})
-	}, [])
+		if (!response.ok) {
+			throw new Error("Error fetching Amazon product")
+		}
 
-	/** Promise */
-	// amazonPaapi
-	// 	.SearchItems(commonParameters, requestParameters)
-	// 	.then((data: any) => {
-	// 		// do something with the success response.
-	// 		console.log(data)
-	// 	})
-	// 	.catch((error: any) => {
-	// 		// catch an error.
-	// 		console.log(error)
-	// 	})
-	return {}
+		const data: AmazonProduct = await response.json()
+		return data
+	}
+
+	return {
+		fetchAmazonProduct
+	}
 }

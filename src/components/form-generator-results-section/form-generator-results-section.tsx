@@ -4,7 +4,6 @@ import { useCleanResults } from "@/hooks/use-clean-results"
 import { useGenerateGifts } from "@/hooks/use-generate-gifts"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
 import { useEffect, useMemo, useRef } from "react"
-import Button from "../ui/button"
 import CardNewGeneration from "../ui/card-new-generation"
 import Loading from "../ui/loading"
 
@@ -62,9 +61,9 @@ export default function FormGeneratorResultsSection() {
 									/>
 								))}
 							</div>
-							<div className="mx-auto mt-8">
+							{/* <div className="mx-auto mt-8">
 								<Button onClick={handleGenerateMoreGifts}>Generar mas regalos</Button>
-							</div>
+							</div> */}
 						</>
 					)}
 				</div>

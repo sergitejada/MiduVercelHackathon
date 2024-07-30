@@ -4,6 +4,7 @@ import FormGeneratorResultsSection from "@/components/form-generator-results-sec
 import Hero from "@/components/hero"
 import InfoSection from "@/components/info-section"
 import NewGenerationsSection from "@/components/new-generations-section/new-generations-section"
+import ClientComponent from "./client-component"
 
 export default async function HomePage() {
 	return (
@@ -14,6 +15,7 @@ export default async function HomePage() {
 				<InfoSection />
 				<NewGenerationsSection />
 				<FaqSection />
+				<ClientComponent />
 			</div>
 			<FooterSection />
 		</>

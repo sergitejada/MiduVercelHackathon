@@ -16,33 +16,33 @@ type ItemType = {
 
 const ITEMS: ItemType[] = [
 	{
-		title: "Music",
+		title: "Música",
 		value: "music",
 		icon: "icon-music.svg"
 	},
 	{
-		title: "Sports",
+		title: "Deporte",
 		value: "sports",
 		icon: "icon-sports.svg",
 		iconStyles: "rotate-180"
 	},
 	{
-		title: "Reading",
+		title: "Lectura",
 		value: "reading",
 		icon: "icon-reading.svg"
 	},
 	{
-		title: "Cooking",
+		title: "Cocina",
 		value: "cooking",
 		icon: "icon-cooking.svg"
 	},
 	{
-		title: "Travel",
+		title: "Viajar",
 		value: "travel",
 		icon: "icon-travel.svg"
 	},
 	{
-		title: "Eat",
+		title: "Comer",
 		value: "eat",
 		icon: "icon-eat.svg"
 	}
@@ -134,7 +134,7 @@ export default function HobbiesStep() {
 							<Input
 								ref={customHobbyInputRef}
 								className="h-10 w-full"
-								placeholder="Play league of legends"
+								placeholder="Videojuegos"
 								onChange={handleInputCustomHobbyChanged}
 							/>
 							<Button className="py-1.5" disabled={!customHobby} onClick={handleAddCustomHobby}>

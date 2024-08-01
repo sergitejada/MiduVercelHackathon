@@ -22,14 +22,14 @@ export default function GenreStep() {
 				{/* <OptionCardItem src="/assets/man.svg" title="Hombre" onSelect={() => handleGenreSelected("man")} /> */}
 				<OptionCardItem
 					src="/assets/woman.png"
-					title="Mujer"
+					title="Chica"
 					selected={gift?.genre === "women"}
 					onSelect={() => handleGenreSelected("women")}
 				/>
 				{/* <OptionCardItem src="/assets/woman.svg" title="Women" onSelect={() => handleGenreSelected("women")} /> */}
 				<OptionCardItem
 					src="/assets/man.png"
-					title="Hombre"
+					title="Chico"
 					selected={gift?.genre === "man"}
 					onSelect={() => handleGenreSelected("man")}
 				/>

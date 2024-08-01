@@ -16,19 +16,13 @@ export default function RegalosParaPage() {
 						</div>
 						<div className="flex flex-wrap justify-center gap-8">
 							<CardArticle
-								src="/assets/stock.avif"
+								src="/assets/novio_boda.jpeg"
 								title="Las Mejores Ideas para Sorprender al Novio"
 								description=""
 								link="/blog/boda/regalos-para-boda-hombre-mejores-ideas"
 							/>
 							<CardArticle
-								src="/assets/stock.avif"
-								title="7 Ideas para el 10 aniversario de boda"
-								description=""
-								link="/blog/aniversario/7-ideas-regalos-para-10-aniversario-boda"
-							/>
-							<CardArticle
-								src="/assets/stock.avif"
+								src="/assets/aniversario_boda.jpg"
 								title="7 Ideas para el 10 aniversario de boda"
 								description=""
 								link="/blog/aniversario/7-ideas-regalos-para-10-aniversario-boda"

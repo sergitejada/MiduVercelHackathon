@@ -1,6 +1,7 @@
 import { AmazonProduct } from "@/types/types"
 import { NextResponse } from "next/server"
 import ProductAdvertisingAPIv1 from "paapi5-nodejs-sdk"
+import { promisify } from "util"
 
 const CLIENT_PARAMETERS = {
 	AccessKey: process.env.AMAZON_ACCESS_KEY,
@@ -40,7 +41,8 @@ export async function POST(req: Request) {
 
 	try {
 		const api = new ProductAdvertisingAPIv1.DefaultApi(defaultClient)
-		const response = await api.searchItems(searchItemsRequest)
+		const searchItemsAsync = promisify(api.searchItems).bind(api)
+		const response = await searchItemsAsync(searchItemsRequest)
 		const result = onSuccess(response)
 
 		return NextResponse.json(result, { status: 200 })

@@ -29,19 +29,20 @@ export default function RegalosParaPage() {
 						encuentres el regalo ideal que haga sentir especial al novio en su gran día.
 					</p>
 					{/*  */}
-					<h2 className="mt-6 font-bold">Regalos Clásicos para el Novio</h2>
+					<h2 className="mt-6 text-2xl font-bold">Regalos Clásicos para el Novio</h2>
 					<p>
 						Los regalos clásicos nunca pasan de moda y siempre son una apuesta segura. Estos regalos suelen ser
 						elegantes y atemporales, adecuados para un hombre sofisticado.
 					</p>
 
-					<h3 className="mt-6 font-semibold">1. Reloj de Lujo</h3>
+					<h3 className="mt-6 text-xl font-semibold">1. Reloj de Lujo</h3>
 					<p>
 						Un reloj de lujo es un símbolo de estilo y sofisticación. Marcas como Rolex, Omega y Tag Heuer ofrecen
 						opciones que combinan diseño y funcionalidad. Un reloj no solo es un accesorio elegante, sino también un
 						recordatorio diario de un día tan especial.
 					</p>
 					<CardProduct src={"/assets/royal-oak.jpg"} title={"Reloj de Lujo"} description={""} link={""} />
+
 					<h3 className="mt-6 font-semibold">2. Gemelos Personalizados</h3>
 					<p>
 						Los gemelos son un accesorio clásico para cualquier traje de boda. Opta por gemelos personalizados con las

@@ -60,8 +60,8 @@ export default function CardNewGeneration({ name, description, img, isFlipped: i
 							<p className="text-xs text-gray-600">{description}</p>
 						</div>
 					</div>
-					<div className="flex justify-start gap-2">
-						<GoogleButton onlyLogo={true} url={name} />
+					<div className="flex justify-center gap-8">
+						<GoogleButton onlyLogo url={name} />
 						<AmazonButton onlyLogo search={name} />
 					</div>
 				</Card>

@@ -7,8 +7,8 @@ export default function RegalosParaPage() {
 	return (
 		<>
 			<div className="flex min-h-screen flex-col">
-				<div className="relative mx-auto flex max-w-7xl justify-center gap-10 pt-16">
-					<div id="ideas-recientes" className="relative mx-auto flex max-w-7xl flex-col gap-10">
+				<div className="relative mx-auto flex max-w-7xl justify-center gap-10 pt-24">
+					<div id="ideas-recientes" className="relative mx-auto flex max-w-7xl flex-col gap-16">
 						<div className="flex flex-col justify-start gap-4">
 							<h1 className="px-8 text-3xl font-extrabold">
 								Encuentra el Regalo para tu <FlipWords words={words} />

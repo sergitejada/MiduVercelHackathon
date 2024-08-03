@@ -62,7 +62,7 @@ export default function CardNewGeneration({ name, description, img, isFlipped: i
 					</div>
 					<div className="flex justify-start gap-2">
 						<GoogleButton onlyLogo={true} url={name} />
-						<AmazonButton onlyLogo />
+						<AmazonButton onlyLogo search={name} />
 					</div>
 				</Card>
 			</ReactCardFlip>

@@ -20,7 +20,6 @@ export default function CardProduct({ src, title, description, link }: Props) {
 				<div className="flex w-auto flex-row justify-start gap-4">
 					<GoogleButton url={title} />
 					<AmazonButton search={title} />
-					{/* <AmazonButton /> */}
 				</div>
 			</div>
 		</div>

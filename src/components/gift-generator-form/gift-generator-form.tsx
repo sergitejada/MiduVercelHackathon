@@ -2,7 +2,7 @@
 
 import Card from "@/components/ui/card"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
-import { useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import AgeStep from "./age-step/age-step"
 import EventsStep from "./events-step/events-step"
 import FormSteps from "./form-steps-indicator/form-steps-indicator"
@@ -22,6 +22,13 @@ const stepComponents = {
 
 export default function GiftGeneratorForm() {
 	const step = useGiftGeneratorFormStore(state => state.step)
+	const resetStore = useGiftGeneratorFormStore(state => state.resetStore)
+
+	useEffect(() => {
+		return () => {
+			resetStore()
+		}
+	}, [])
 
 	const currentStepComponent = useMemo(() => {
 		switch (step) {

@@ -14,7 +14,7 @@ type ItemType = {
 	iconStyles?: string
 }
 
-const ITEMS: ItemType[] = [
+const items: ItemType[] = [
 	{
 		title: "Música",
 		value: "music",
@@ -104,7 +104,7 @@ export default function HobbiesStep() {
 	}
 
 	const customHobbies = useMemo(
-		() => hobbies?.filter(hobby => !ITEMS.map(item => item.value.toString()).includes(hobby)),
+		() => hobbies?.filter(hobby => !items.map(item => item.value.toString()).includes(hobby)),
 		[hobbies]
 	)
 
@@ -118,7 +118,7 @@ export default function HobbiesStep() {
 					))}
 				</div>
 				<div className="grid grid-cols-2 gap-4">
-					{ITEMS.map(item => (
+					{items.map(item => (
 						<HobbyCard
 							key={item.title}
 							title={item.title}

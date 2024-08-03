@@ -15,7 +15,7 @@ interface Props {
 	isFlipped?: boolean
 }
 
-const FALLBACK_IMAGE = "/assets/present.svg"
+const fallbackImage = "/assets/present.svg"
 
 export default function CardNewGeneration({ name, description, img, isFlipped: initIsFlipped }: Props) {
 	const [isFlipped, setIsFlipped] = useState(initIsFlipped || false)
@@ -47,7 +47,7 @@ export default function CardNewGeneration({ name, description, img, isFlipped: i
 				<Card className="flex h-[28rem] w-full max-w-80 flex-col justify-between gap-8 transition-none">
 					<div className="flex flex-col gap-8">
 						<Image
-							src={img ?? FALLBACK_IMAGE}
+							src={img ?? fallbackImage}
 							alt="Image"
 							width={200}
 							height={250}

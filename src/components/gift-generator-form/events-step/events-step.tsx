@@ -77,8 +77,6 @@ export default function EventsStep() {
 
 	const isCustom = gift?.event && !items.some(item => item.value === gift?.event)
 
-	console.log(isCustom)
-
 	return (
 		<>
 			<div className="flex w-full flex-col text-center">

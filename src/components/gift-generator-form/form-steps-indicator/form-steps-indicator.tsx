@@ -1,4 +1,4 @@
-import { GiftFormSteps } from "@/consts/consts"
+import { GIFT_FORM_STEPS } from "@/consts/consts"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
 import StepItem from "./step-item"
 
@@ -18,8 +18,8 @@ export default function FormSteps({ step: currentStep }: Props) {
 
 	return (
 		<ol className="mb-4 flex w-full items-center justify-center sm:mb-5">
-			{GiftFormSteps.map((step, index) => (
-				<StepItem key={step} step={index + 1} currentStep={currentStep} steps={GiftFormSteps} onClick={handleClick} />
+			{GIFT_FORM_STEPS.map((step, index) => (
+				<StepItem key={step} step={index + 1} currentStep={currentStep} steps={GIFT_FORM_STEPS} onClick={handleClick} />
 			))}
 		</ol>
 	)

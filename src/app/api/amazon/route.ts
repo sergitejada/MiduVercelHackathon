@@ -3,14 +3,14 @@ import { NextResponse } from "next/server"
 import ProductAdvertisingAPIv1 from "paapi5-nodejs-sdk"
 import { promisify } from "util"
 
-const CLIENT_PARAMETERS = {
+const clientParameters = {
 	AccessKey: process.env.AMAZON_ACCESS_KEY,
 	SecretKey: process.env.AMAZON_SECRET_KEY,
 	Host: "webservices.amazon.es",
 	Region: "eu-west-1"
 }
 
-const SEARCH_PARAMETERS = {
+const searchParameters = {
 	/** Enter your partner tag (store/tracking id) and partner type */
 	PartnerTag: "stpesca-21",
 	PartnerType: "Associates",
@@ -27,16 +27,16 @@ export async function POST(req: Request) {
 	const { productName } = await req.json()
 
 	const defaultClient = ProductAdvertisingAPIv1.ApiClient.instance
-	defaultClient.accessKey = CLIENT_PARAMETERS.AccessKey
-	defaultClient.secretKey = CLIENT_PARAMETERS.SecretKey
-	defaultClient.host = CLIENT_PARAMETERS.Host
-	defaultClient.region = CLIENT_PARAMETERS.Region
+	defaultClient.accessKey = clientParameters.AccessKey
+	defaultClient.secretKey = clientParameters.SecretKey
+	defaultClient.host = clientParameters.Host
+	defaultClient.region = clientParameters.Region
 
 	const searchItemsRequest = new ProductAdvertisingAPIv1.SearchItemsRequest()
-	searchItemsRequest.PartnerTag = SEARCH_PARAMETERS.PartnerTag
-	searchItemsRequest.PartnerType = SEARCH_PARAMETERS.PartnerType
-	searchItemsRequest.ItemCount = SEARCH_PARAMETERS.ItemCount
-	searchItemsRequest.Resources = SEARCH_PARAMETERS.Resources
+	searchItemsRequest.PartnerTag = searchParameters.PartnerTag
+	searchItemsRequest.PartnerType = searchParameters.PartnerType
+	searchItemsRequest.ItemCount = searchParameters.ItemCount
+	searchItemsRequest.Resources = searchParameters.Resources
 	searchItemsRequest.Keywords = productName
 
 	try {

@@ -1,4 +1,4 @@
-import { GiftFormSteps } from "@/consts/consts"
+import { GIFT_FORM_STEPS } from "@/consts/consts"
 import { GiftForm, GiftGenerationStatus } from "@/types/types"
 import { create } from "zustand"
 
@@ -33,10 +33,10 @@ export const useGiftGeneratorFormStore = create<Store>()((set, get) => ({
 	nextStep: () => {
 		const { step } = get()
 
-		const lastStep = GiftFormSteps.length
+		const lastStep = GIFT_FORM_STEPS.length
 		if (step === lastStep) return
 
-		GiftFormSteps.length === step ? set({ step: 1 }) : set({ step: step + 1 })
+		GIFT_FORM_STEPS.length === step ? set({ step: 1 }) : set({ step: step + 1 })
 	},
 	previousStep: () => {
 		const { step } = get()

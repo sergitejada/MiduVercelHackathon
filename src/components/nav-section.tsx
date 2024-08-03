@@ -3,12 +3,11 @@ import { Logo } from "./ui/logo"
 
 export default function NavSection() {
 	return (
-		<div className="mx-auto flex max-w-screen-2xl items-center justify-between p-4">
+		<div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-between gap-6 p-4 lg:flex-row xl:gap-0">
 			<Link href="/" className="flex items-center gap-2">
 				<Logo alt="Logo" />
 				<span className="text-xl font-bold">GIFTHUNTER</span>
 			</Link>
-
 			<nav className="flex items-center gap-8">
 				<Link className="hover:underline" href="/#ideas-recientes">
 					Ideas Recientes

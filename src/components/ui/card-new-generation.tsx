@@ -44,7 +44,7 @@ export default function CardNewGeneration({ name, description, img, isFlipped: i
 					/>
 					<p className="text-center">CLIC PARA REVELAR</p>
 				</Card>
-				<Card className="flex h-[28rem] w-full max-w-80 flex-col justify-between gap-8 transition-none">
+				<Card className="flex h-[28rem] w-96 flex-col justify-between gap-8 transition-none lg:w-full lg:max-w-80">
 					<div className="flex flex-col gap-8">
 						<Image
 							src={img ?? fallbackImage}

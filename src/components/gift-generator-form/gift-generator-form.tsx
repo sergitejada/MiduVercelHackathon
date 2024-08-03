@@ -48,7 +48,7 @@ export default function GiftGeneratorForm() {
 	}, [step])
 
 	return (
-		<Card className="flex h-fit min-h-[38rem] w-[800px] flex-col justify-between p-8">
+		<Card className="m-8 flex h-fit min-h-[38rem] flex-col justify-between p-8 lg:m-0 lg:w-[800px]">
 			<header>
 				<FormSteps step={step} />
 			</header>

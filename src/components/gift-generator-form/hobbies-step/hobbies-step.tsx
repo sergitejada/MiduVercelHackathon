@@ -119,17 +119,19 @@ export default function HobbiesStep() {
 						))}
 					</div>
 				)}
-				<div className="grid grid-cols-2 gap-4">
-					{items.map(item => (
-						<HobbyCard
-							key={item.title}
-							title={item.title}
-							icon={item.icon}
-							iconStyles={item.iconStyles}
-							selected={hobbies.includes(item.value)}
-							onSelect={() => handleEventSelected(item.value)}
-						/>
-					))}
+				<div className="flex flex-col gap-4">
+					<div className="grid gap-4 sm:grid-cols-2">
+						{items.map(item => (
+							<HobbyCard
+								key={item.title}
+								title={item.title}
+								icon={item.icon}
+								iconStyles={item.iconStyles}
+								selected={hobbies.includes(item.value)}
+								onSelect={() => handleEventSelected(item.value)}
+							/>
+						))}
+					</div>
 					<div className="col-span-2 my-4 flex flex-col gap-4">
 						<div className="col-span-2 flex w-full items-center gap-4">
 							<p>Otro:</p>

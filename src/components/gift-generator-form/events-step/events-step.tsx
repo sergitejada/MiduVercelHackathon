@@ -81,16 +81,18 @@ export default function EventsStep() {
 		<>
 			<div className="flex w-full flex-col text-center">
 				<h2 className="mb-10 text-2xl font-bold">¿Qué evento estás celebrando?</h2>
-				<div className="grid grid-cols-2 gap-4">
-					{items.map(item => (
-						<EventCard
-							key={item.title}
-							title={item.title}
-							icon={item.icon}
-							selected={gift?.event === item.value}
-							onSelect={() => handleEventSelected(item.value)}
-						/>
-					))}
+				<div className="flex flex-col gap-4">
+					<div className="grid gap-4 sm:grid-cols-2">
+						{items.map(item => (
+							<EventCard
+								key={item.title}
+								title={item.title}
+								icon={item.icon}
+								selected={gift?.event === item.value}
+								onSelect={() => handleEventSelected(item.value)}
+							/>
+						))}
+					</div>
 					<div className="col-span-2 my-4 flex w-full items-center gap-4">
 						<p>Otro:</p>
 						<Input

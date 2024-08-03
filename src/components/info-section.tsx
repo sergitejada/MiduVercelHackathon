@@ -16,12 +16,12 @@ const items = [
 
 export default function InfoSection() {
 	return (
-		<section className="py-12">
+		<section className="mx-8 py-12 lg:mx-0">
 			<div className="container mx-auto grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 				{items.map(item => (
 					<article key={item.title} className="rounded-lg border bg-white p-6 shadow-md">
-						<h2 className="mb-4 text-2xl font-semibold text-orange-500">{item.title}</h2>
-						<p className="text-gray-700">{item.description}</p>
+						<h2 className="mb-4 text-center text-2xl font-semibold text-orange-500 lg:text-start">{item.title}</h2>
+						<p className="text-center text-gray-700 lg:text-start">{item.description}</p>
 					</article>
 				))}
 			</div>

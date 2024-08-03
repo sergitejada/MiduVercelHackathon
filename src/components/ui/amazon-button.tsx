@@ -1,11 +1,14 @@
+import Link from "next/link"
+
 interface Props {
 	onlyLogo?: boolean
+	search: string
 }
 
-export default function AmazonButton({ onlyLogo = false }: Props) {
+export default function AmazonButton({ onlyLogo = false, search }: Props) {
 	return (
-		<div className="flex w-full items-center justify-center">
-			<button className="flex items-center gap-2 rounded-lg border border-yellow-500 bg-yellow-400 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-yellow-500 active:bg-yellow-600">
+		<Link href={`https://www.amazon.es/s?k=${search}`} target="_blank">
+			<button className="flex h-full w-full items-center gap-2 rounded-lg border border-yellow-500 bg-yellow-400 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-yellow-500 active:bg-yellow-600">
 				<svg
 					className="h-5 w-5"
 					xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +30,6 @@ export default function AmazonButton({ onlyLogo = false }: Props) {
 				</svg>
 				{!onlyLogo && <span>Ver en Amazon</span>}
 			</button>
-		</div>
+		</Link>
 	)
 }

@@ -15,7 +15,7 @@ interface Props {
 	isFlipped?: boolean
 }
 
-const FALLBACK_IMAGE = "/assets/present.svg"
+const fallbackImage = "/assets/present.svg"
 
 export default function CardNewGeneration({ name, description, img, isFlipped: initIsFlipped }: Props) {
 	const [isFlipped, setIsFlipped] = useState(initIsFlipped || false)
@@ -37,20 +37,20 @@ export default function CardNewGeneration({ name, description, img, isFlipped: i
 					<Image
 						src="/assets/present.svg"
 						alt="Gift"
-						width={350}
-						height={350}
-						className="mx-auto rounded"
+						width="350"
+						height="350"
+						className="mx-auto aspect-square h-auto w-auto rounded"
 						unoptimized
 					/>
-					<p className="text-center">CLICK PARA REVELAR</p>
+					<p className="text-center">CLIC PARA REVELAR</p>
 				</Card>
-				<Card className="flex h-[28rem] w-full max-w-80 flex-col justify-between gap-8 transition-none">
+				<Card className="flex h-[28rem] w-96 flex-col justify-between gap-8 transition-none lg:w-full lg:max-w-80">
 					<div className="flex flex-col gap-8">
 						<Image
-							src={img ?? FALLBACK_IMAGE}
+							src={img ?? fallbackImage}
 							alt="Image"
-							width={200}
-							height={250}
+							width="200"
+							height="200"
 							className="mx-auto aspect-square rounded"
 							priority
 							unoptimized
@@ -60,9 +60,9 @@ export default function CardNewGeneration({ name, description, img, isFlipped: i
 							<p className="text-xs text-gray-600">{description}</p>
 						</div>
 					</div>
-					<div className="flex justify-start gap-2">
-						<GoogleButton onlyLogo={true} url={name} />
-						<AmazonButton onlyLogo />
+					<div className="flex justify-center gap-8">
+						<GoogleButton onlyLogo url={name} />
+						<AmazonButton onlyLogo search={name} />
 					</div>
 				</Card>
 			</ReactCardFlip>

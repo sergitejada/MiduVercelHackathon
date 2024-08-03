@@ -59,10 +59,11 @@ export default function HobbyCard({ title, icon, iconStyles, selected, onSelect 
 				{icon && (
 					<Image
 						src={`/assets/${icon}`}
-						width={36}
-						height={36}
+						width="24"
+						height="24"
 						alt={title}
-						className={cn("h-full max-h-6", iconStyles)}
+						className={cn("aspect-square", iconStyles)}
+						unoptimized
 					/>
 				)}
 				<span className="tracking-wide">{title}</span>

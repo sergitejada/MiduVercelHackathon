@@ -1,1 +1,1 @@
-export const GiftFormSteps = ["genre", "relation", "ageRange", "event", "hobbies", "moreDetails"]
+export const GIFT_FORM_STEPS = ["genre", "relation", "ageRange", "event", "hobbies", "moreDetails"]

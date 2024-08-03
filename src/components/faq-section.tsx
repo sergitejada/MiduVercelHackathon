@@ -1,6 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion"
 
-const ITEMS = [
+const items = [
 	{
 		title: "¿Como funciona GiftHunter?",
 		content:
@@ -34,14 +34,14 @@ const ITEMS = [
 
 export default function FaqSection() {
 	return (
-		<section id="como-funciona" className="relative bg-gradient-to-b from-neutral-100 to-neutral-50 py-32">
+		<section id="como-funciona" className="relative bg-gradient-to-b from-neutral-100 to-neutral-50 px-8 py-32 lg:px-0">
 			<div className="container mx-auto flex flex-col items-center gap-20">
 				<h3 className="text-3xl font-semibold">Preguntas frequentes</h3>
-				<Accordion type="single" collapsible className="mx-auto w-[40rem]">
-					{ITEMS.map((item, index) => (
+				<Accordion type="single" collapsible className="mx-auto lg:w-[40rem]">
+					{items.map((item, index) => (
 						<AccordionItem key={index} value={`item-${index}`}>
 							<AccordionTrigger className="text-start text-lg font-bold">{item.title}</AccordionTrigger>
-							<AccordionContent className="max-w-[40rem]">{item.content}</AccordionContent>
+							<AccordionContent className="lg:max-w-[40rem]">{item.content}</AccordionContent>
 						</AccordionItem>
 					))}
 				</Accordion>

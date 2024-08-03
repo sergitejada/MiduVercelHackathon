@@ -21,7 +21,7 @@ export default function RelationStep() {
 			<div className="flex flex-wrap">
 				<div className="flex w-full flex-col items-center gap-4">
 					<h2 className="mb-10 text-2xl font-bold">¿Qué relación tienes?</h2>
-					<div className="grid w-full grid-cols-2 gap-4">
+					<div className="grid w-full gap-4 sm:grid-cols-2">
 						<AgeCard
 							age="Pareja"
 							selected={gift?.relation === "couple"}

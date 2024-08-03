@@ -4,15 +4,10 @@ import { useEffect, useState } from "react"
 
 export default function BackToTop() {
 	const [isVisible, setIsVisible] = useState(false)
-	function handleBackToTop() {
-		window.scrollTo({
-			top: 0,
-			behavior: "smooth"
-		})
-	}
+
 	useEffect(() => {
 		function toggleVisibility() {
-			if (window.pageYOffset > 300) {
+			if (window.scrollY > 300) {
 				// Cambia este valor según cuándo quieres que aparezca el botón
 				setIsVisible(true)
 			} else {
@@ -26,6 +21,13 @@ export default function BackToTop() {
 			window.removeEventListener("scroll", toggleVisibility)
 		}
 	}, [])
+
+	function handleBackToTop() {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth"
+		})
+	}
 
 	return (
 		<div>

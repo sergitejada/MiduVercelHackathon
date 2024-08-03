@@ -39,10 +39,10 @@ export default function FormGeneratorResultsSection() {
 		<section ref={formGeneratorResultsRef} id="formGeneratorResults">
 			<div className="mb-40 min-h-[60rem] bg-orange-200 py-24">
 				<div className="container mx-auto flex w-full flex-col gap-20">
-					<h2 className="text-center text-4xl font-semibold">Results</h2>
+					<h2 className="text-center text-4xl font-semibold">Resultados</h2>
 					{isLoading && (
 						<div className="flex flex-col justify-center gap-8">
-							<h2 className="mx-auto text-center text-2xl">Generating gifts...</h2>
+							<h2 className="mx-auto text-center text-2xl">Generando regalos...</h2>
 							<div className="mx-auto">
 								<Loading />
 							</div>

@@ -5,5 +5,7 @@ interface Props {
 }
 
 export function Logo({ alt }: Props) {
-	return <Image src="/assets/present.svg" alt={alt} width="40" height="40" />
+	return (
+		<Image src="/assets/present.svg" alt={alt} width="40" height="40" className="aspect-square" unoptimized priority />
+	)
 }

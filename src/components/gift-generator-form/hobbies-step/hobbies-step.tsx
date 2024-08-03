@@ -14,7 +14,7 @@ type ItemType = {
 	iconStyles?: string
 }
 
-const ITEMS: ItemType[] = [
+const items: ItemType[] = [
 	{
 		title: "Música",
 		value: "music",
@@ -104,7 +104,7 @@ export default function HobbiesStep() {
 	}
 
 	const customHobbies = useMemo(
-		() => hobbies?.filter(hobby => !ITEMS.map(item => item.value.toString()).includes(hobby)),
+		() => hobbies?.filter(hobby => !items.map(item => item.value.toString()).includes(hobby)),
 		[hobbies]
 	)
 
@@ -112,22 +112,26 @@ export default function HobbiesStep() {
 		<>
 			<div className="flex w-full flex-col text-center">
 				<h2 className="mb-10 text-2xl font-bold">¿Qué hobbies le gustan?</h2>
-				<div className="mb-4 flex w-full flex-wrap justify-start gap-4 rounded-lg p-2">
-					{customHobbies?.map((hobby, index) => (
-						<HobbyChip key={hobby + index} text={hobby} onDelete={() => handleOnDeleteChip(hobby)} />
-					))}
-				</div>
-				<div className="grid grid-cols-2 gap-4">
-					{ITEMS.map(item => (
-						<HobbyCard
-							key={item.title}
-							title={item.title}
-							icon={item.icon}
-							iconStyles={item.iconStyles}
-							selected={hobbies.includes(item.value)}
-							onSelect={() => handleEventSelected(item.value)}
-						/>
-					))}
+				{customHobbies && customHobbies.length > 0 && (
+					<div className="mb-4 flex w-full flex-wrap justify-start gap-4 rounded-lg p-2">
+						{customHobbies?.map((hobby, index) => (
+							<HobbyChip key={hobby + index} text={hobby} onDelete={() => handleOnDeleteChip(hobby)} />
+						))}
+					</div>
+				)}
+				<div className="flex flex-col gap-4">
+					<div className="grid gap-4 sm:grid-cols-2">
+						{items.map(item => (
+							<HobbyCard
+								key={item.title}
+								title={item.title}
+								icon={item.icon}
+								iconStyles={item.iconStyles}
+								selected={hobbies.includes(item.value)}
+								onSelect={() => handleEventSelected(item.value)}
+							/>
+						))}
+					</div>
 					<div className="col-span-2 my-4 flex flex-col gap-4">
 						<div className="col-span-2 flex w-full items-center gap-4">
 							<p>Otro:</p>

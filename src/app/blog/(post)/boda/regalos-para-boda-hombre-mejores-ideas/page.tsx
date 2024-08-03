@@ -13,9 +13,11 @@ export default function RegalosParaPage() {
 				<Image
 					src="/assets/hombre-boda.jpg"
 					alt="Hombre en una boda"
-					width={800}
-					height={600}
-					className="h-[600px] w-full rounded object-cover"
+					width="800"
+					height="800"
+					className="aspect-video w-full rounded object-cover"
+					unoptimized
+					priority
 				/>
 			</div>
 

@@ -9,12 +9,12 @@ export default function RegalosParaPage() {
 			<div className="flex min-h-screen flex-col">
 				<div className="relative mx-auto flex max-w-7xl justify-center gap-10 pt-24">
 					<div id="ideas-recientes" className="relative mx-auto flex max-w-7xl flex-col gap-16">
-						<div className="flex flex-col justify-start gap-4">
-							<h1 className="px-8 text-3xl font-extrabold">
+						<div className="flex w-full flex-col gap-4">
+							<h1 className="px-8 text-center text-3xl font-extrabold">
 								Encuentra el Regalo para tu <FlipWords words={words} />
 							</h1>
 						</div>
-						<div className="flex flex-wrap justify-center gap-8">
+						<section className="flex w-full flex-wrap justify-center gap-8">
 							<CardArticle
 								src="/assets/novio_boda.jpeg"
 								title="Las Mejores Ideas para Sorprender al Novio"
@@ -27,7 +27,7 @@ export default function RegalosParaPage() {
 								description=""
 								link="/blog/aniversario/7-ideas-regalos-para-10-aniversario-boda"
 							/>
-						</div>
+						</section>
 					</div>
 				</div>
 			</div>

@@ -16,7 +16,16 @@ export default function EventCard({ title, icon, selected, onSelect }: Props) {
 			onClick={() => (onSelect ? onSelect() : null)}
 		>
 			<div className="flex h-full items-center gap-6 px-2">
-				{icon && <Image src={`/assets/${icon}`} width={36} height={36} alt={title} className="h-full max-h-10" />}
+				{icon && (
+					<Image
+						src={`/assets/${icon}`}
+						width="36"
+						height="36"
+						alt={title}
+						className="aspect-square max-h-10"
+						unoptimized
+					/>
+				)}
 				<span className="tracking-wide">{title}</span>
 			</div>
 		</Card>

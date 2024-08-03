@@ -22,7 +22,7 @@ export default function OptionCardItem({ title, src, selected, onSelect }: Props
 				<h3 className="font-semibold">{title}</h3>
 			</header>
 			<div className="my-8 flex justify-center">
-				<Image src={src} width={120} height={120} alt="man" />
+				<Image src={src} width="120" height="120" alt="man" className="aspect-square" unoptimized priority />
 			</div>
 		</Card>
 	)

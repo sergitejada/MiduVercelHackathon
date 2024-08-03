@@ -37,9 +37,9 @@ export default function CardNewGeneration({ name, description, img, isFlipped: i
 					<Image
 						src="/assets/present.svg"
 						alt="Gift"
-						width={350}
-						height={350}
-						className="mx-auto rounded"
+						width="350"
+						height="350"
+						className="mx-auto aspect-square h-auto w-auto rounded"
 						unoptimized
 					/>
 					<p className="text-center">CLIC PARA REVELAR</p>
@@ -49,8 +49,8 @@ export default function CardNewGeneration({ name, description, img, isFlipped: i
 						<Image
 							src={img ?? fallbackImage}
 							alt="Image"
-							width={200}
-							height={250}
+							width="200"
+							height="200"
 							className="mx-auto aspect-square rounded"
 							priority
 							unoptimized

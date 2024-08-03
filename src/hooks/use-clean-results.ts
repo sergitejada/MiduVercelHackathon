@@ -1,3 +1,4 @@
+import { saveGifts } from "@/components/form-generator-results-section/action"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
 import { useEffect, useState } from "react"
 import { useAmazonApi } from "./use-amazon-api"
@@ -42,6 +43,7 @@ export const useCleanResults = () => {
 					})
 				}
 			}
+			saveGifts(formattedParts)
 
 			setCleanResults(formattedParts)
 		}

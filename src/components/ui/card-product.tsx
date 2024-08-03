@@ -13,7 +13,7 @@ export default function CardProduct({ src, title, description, link }: Props) {
 	return (
 		<div className="mt-4 flex gap-8 border p-1">
 			<div>
-				<Image src={src} alt={""} width={150} height={150} className="h-[150px] w-[150px] rounded object-cover" />
+				<Image src={src} alt={title} width={150} height={150} className="aspect-square rounded object-cover" />
 			</div>
 			<div className="mt-6 flex w-3/4 flex-col gap-4">
 				<h4 className="text-center text-xl">{title}</h4>

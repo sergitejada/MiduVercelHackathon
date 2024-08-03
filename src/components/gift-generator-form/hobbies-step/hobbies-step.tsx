@@ -112,11 +112,13 @@ export default function HobbiesStep() {
 		<>
 			<div className="flex w-full flex-col text-center">
 				<h2 className="mb-10 text-2xl font-bold">¿Qué hobbies le gustan?</h2>
-				<div className="mb-4 flex w-full flex-wrap justify-start gap-4 rounded-lg p-2">
-					{customHobbies?.map((hobby, index) => (
-						<HobbyChip key={hobby + index} text={hobby} onDelete={() => handleOnDeleteChip(hobby)} />
-					))}
-				</div>
+				{customHobbies && customHobbies.length > 0 && (
+					<div className="mb-4 flex w-full flex-wrap justify-start gap-4 rounded-lg p-2">
+						{customHobbies?.map((hobby, index) => (
+							<HobbyChip key={hobby + index} text={hobby} onDelete={() => handleOnDeleteChip(hobby)} />
+						))}
+					</div>
+				)}
 				<div className="grid grid-cols-2 gap-4">
 					{items.map(item => (
 						<HobbyCard

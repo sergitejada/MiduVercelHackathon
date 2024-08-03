@@ -42,7 +42,7 @@ export default function CardNewGeneration({ name, description, img, isFlipped: i
 						className="mx-auto rounded"
 						unoptimized
 					/>
-					<p className="text-center">CLICK PARA REVELAR</p>
+					<p className="text-center">CLIC PARA REVELAR</p>
 				</Card>
 				<Card className="flex h-[28rem] w-full max-w-80 flex-col justify-between gap-8 transition-none">
 					<div className="flex flex-col gap-8">

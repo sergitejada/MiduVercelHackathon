@@ -5,7 +5,9 @@ export default function PostLayout({ children }: { children: React.ReactNode }) 
 		<>
 			<div className="mx-4 mt-8 flex max-w-7xl flex-col justify-between gap-4 text-center lg:mx-auto lg:mt-20 lg:flex-row lg:text-start">
 				<div>{children}</div>
-				<SideGiftsFormGenerator />
+				<div className="lg:sticky lg:top-5 lg:self-start">
+					<SideGiftsFormGenerator />
+				</div>
 			</div>
 		</>
 	)

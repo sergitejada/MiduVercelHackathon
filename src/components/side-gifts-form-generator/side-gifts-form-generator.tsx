@@ -2,9 +2,9 @@ import Button from "../ui/button"
 
 export default function SideGiftsFormGenerator() {
 	return (
-		<aside className="h-fit min-w-[25rem] rounded-md border bg-white drop-shadow-lg">
-			<header className="rounded-t-md bg-gray-100 p-4">
-				<h2 className="text-xl font-semibold">Encuentra el regalo perfecto</h2>
+		<aside className="h-fit min-w-[25rem] rounded-md bg-white drop-shadow-lg">
+			<header className="rounded-t-md bg-orange-400 p-4">
+				<h2 className="text-xl font-semibold text-white">Encuentra el regalo perfecto</h2>
 			</header>
 			<div className="p-4">
 				<form>

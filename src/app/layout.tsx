@@ -3,6 +3,7 @@ import "./globals.css"
 import BackToTop from "@/components/back-to-top"
 import NavSection from "@/components/nav-section"
 
+import { Analytics } from "@vercel/analytics/react"
 import { JetBrains_Mono } from "next/font/google"
 import { cn } from "../lib/utils"
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					{children}
 				</div>
 				<BackToTop />
+				<Analytics />
 			</body>
 		</html>
 	)

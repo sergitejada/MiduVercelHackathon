@@ -4,6 +4,7 @@ import BackToTop from "@/components/back-to-top"
 import NavSection from "@/components/nav-section"
 
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { JetBrains_Mono } from "next/font/google"
 import { cn } from "../lib/utils"
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				</div>
 				<BackToTop />
 				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	)

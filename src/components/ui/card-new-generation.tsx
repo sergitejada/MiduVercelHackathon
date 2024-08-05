@@ -26,7 +26,7 @@ export default function CardNewGeneration({ name, description, img, isFlipped: i
 	}
 
 	return (
-		<article key={key}>
+		<article>
 			<ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
 				<Card
 					onClick={handleFlipCard}

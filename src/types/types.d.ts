@@ -22,3 +22,10 @@ export type GiftGenerationStatus = "idle" | "generating" | "success" | "error"
 export interface AmazonProduct {
 	imageUrl: string
 }
+
+export interface Gift {
+	id: string
+	name: string
+	description: string | undefined
+	images: string
+}

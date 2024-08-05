@@ -47,8 +47,6 @@ export const useGenerateGifts = () => {
 			const data = await response.json()
 
 			setResults([data])
-
-			setGiftGenerationStatus("success")
 		} catch (e) {
 			console.error(e)
 			setGiftGenerationStatus("error")

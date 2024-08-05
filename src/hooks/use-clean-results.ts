@@ -9,10 +9,13 @@ export const useCleanResults = () => {
 	const results = useGiftGeneratorFormStore(state => state.results)
 	const cleanResults = useGiftGeneratorFormStore(state => state.cleanResults)
 	const setCleanResults = useGiftGeneratorFormStore(state => state.setCleanResults)
+	const setGiftGenerationStatus = useGiftGeneratorFormStore(state => state.setGiftGenerationStatus)
 
 	const { fetchAmazonProduct } = useAmazonApi()
 
 	useEffect(() => {
+		if (!results) return
+
 		async function doCleanResults() {
 			const joinnedResults = results?.join("") || ""
 
@@ -23,26 +26,32 @@ export const useCleanResults = () => {
 			parts = parts.filter(part => part.trim() !== "").map(part => part.trim())
 
 			// Convertir las partes en objetos con 'producto' y 'descripcion'
-			const formattedParts: Gift[] = []
-			for (let i = 0; i < parts.length; i++) {
-				let [producto, descripcion] = parts[i].split(":").map(part => part.trim())
-				const amazonProduct = await fetchAmazonProduct(producto)
-				if (producto && descripcion) {
-					formattedParts.push({
-						id: crypto.randomUUID(),
-						name: producto,
-						description: descripcion,
-						imageUrl: amazonProduct.imageUrl
-					})
+			try {
+				const formattedParts: Gift[] = []
+				for (let i = 0; i < parts.length; i++) {
+					let [producto, descripcion] = parts[i].split(":").map(part => part.trim())
+					const amazonProduct = await fetchAmazonProduct(producto)
+					if (producto && descripcion) {
+						formattedParts.push({
+							id: crypto.randomUUID(),
+							name: producto,
+							description: descripcion,
+							imageUrl: amazonProduct.imageUrl
+						})
+					}
 				}
-			}
 
-			const { error } = await saveGifts(formattedParts)
-			if (error) {
-				// !TODO - Handle error with toast
-			}
+				const { error } = await saveGifts(formattedParts)
+				if (error) {
+					// !TODO - Handle error with toast
+				}
 
-			setCleanResults(formattedParts)
+				setCleanResults(formattedParts)
+				setGiftGenerationStatus("success")
+			} catch (error) {
+				console.error(error)
+				setGiftGenerationStatus("error")
+			}
 		}
 
 		doCleanResults()

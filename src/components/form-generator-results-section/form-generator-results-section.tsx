@@ -9,6 +9,7 @@ import Loading from "../ui/loading"
 
 export default function FormGeneratorResultsSection() {
 	const gift = useGiftGeneratorFormStore(state => state.gift)
+	const cleanResults = useGiftGeneratorFormStore(state => state.cleanResults)
 
 	const { status, results } = useCleanResults()
 	const { generateResults } = useGenerateGifts()
@@ -31,7 +32,7 @@ export default function FormGeneratorResultsSection() {
 		await generateResults(gift)
 	}
 
-	const isLoading = useMemo(() => status === "generating" || !results || results.length === 0, [status, results])
+	const isLoading = useMemo(() => status === "generating" && !cleanResults, [status, results])
 
 	if (status === "idle") return null
 
@@ -48,7 +49,11 @@ export default function FormGeneratorResultsSection() {
 							</div>
 						</div>
 					)}
-					{status === "error" && <p className="text-center text-4xl text-red-900">Error</p>}
+					{status === "error" && (
+						<p className="text-center text-4xl text-red-900">
+							Hubo un error al generar los regalos. Por favor, intenta de nuevo.
+						</p>
+					)}
 					{status === "success" && (
 						<>
 							<div className="grid gap-12 lg:grid-cols-2 xl:grid-cols-4">

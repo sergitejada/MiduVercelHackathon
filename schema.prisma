@@ -13,6 +13,6 @@ model Gifts {
   id        	Int      @id @default(autoincrement())
   name      	String
   description String
-  images 			String
+  imageUrl		String?
 	createdAt 	DateTime @default(now())
 }

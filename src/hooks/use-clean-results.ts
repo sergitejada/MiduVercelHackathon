@@ -1,21 +1,14 @@
-import { saveGifts } from "@/components/form-generator-results-section/action"
+import { saveGifts } from "@/actions"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
-import { useEffect, useState } from "react"
+import { Gift } from "@/types/types"
+import { useEffect } from "react"
 import { useAmazonApi } from "./use-amazon-api"
 
 export const useCleanResults = () => {
-	const [cleanResults, setCleanResults] = useState<
-		| {
-				id: string
-				producto: string
-				descripcion: string
-				imageUrl: string
-		  }[]
-		| null
-	>(null)
-
 	const giftGenerationStatus = useGiftGeneratorFormStore(state => state.giftGenerationStatus)
 	const results = useGiftGeneratorFormStore(state => state.results)
+	const cleanResults = useGiftGeneratorFormStore(state => state.cleanResults)
+	const setCleanResults = useGiftGeneratorFormStore(state => state.setCleanResults)
 
 	const { fetchAmazonProduct } = useAmazonApi()
 
@@ -30,20 +23,24 @@ export const useCleanResults = () => {
 			parts = parts.filter(part => part.trim() !== "").map(part => part.trim())
 
 			// Convertir las partes en objetos con 'producto' y 'descripcion'
-			const formattedParts = []
+			const formattedParts: Gift[] = []
 			for (let i = 0; i < parts.length; i++) {
 				let [producto, descripcion] = parts[i].split(":").map(part => part.trim())
 				const amazonProduct = await fetchAmazonProduct(producto)
 				if (producto && descripcion) {
 					formattedParts.push({
 						id: crypto.randomUUID(),
-						producto,
-						descripcion,
+						name: producto,
+						description: descripcion,
 						imageUrl: amazonProduct.imageUrl
 					})
 				}
 			}
-			saveGifts(formattedParts)
+
+			const { error } = await saveGifts(formattedParts)
+			if (error) {
+				// !TODO - Handle error with toast
+			}
 
 			setCleanResults(formattedParts)
 		}

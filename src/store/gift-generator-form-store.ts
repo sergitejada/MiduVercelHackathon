@@ -1,5 +1,5 @@
 import { GIFT_FORM_STEPS } from "@/consts/consts"
-import { GiftForm, GiftGenerationStatus } from "@/types/types"
+import { Gift, GiftForm, GiftGenerationStatus } from "@/types/types"
 import { create } from "zustand"
 
 interface State {
@@ -7,6 +7,7 @@ interface State {
 	step: number
 	giftGenerationStatus: GiftGenerationStatus
 	results: string[] | null
+	cleanResults: Gift[] | null
 }
 
 interface Store extends State {
@@ -16,6 +17,8 @@ interface Store extends State {
 	setStep: (step: number) => void
 	setGiftGenerationStatus: (status: GiftGenerationStatus) => void
 	setResults: (results: string[]) => void
+	setCleanResults: (results: Gift[]) => void
+	clearResults: () => void
 	resetStore: () => void
 }
 
@@ -23,7 +26,8 @@ const initialState: State = {
 	gift: null,
 	step: 1,
 	giftGenerationStatus: "idle",
-	results: null
+	results: null,
+	cleanResults: null
 }
 
 export const useGiftGeneratorFormStore = create<Store>()((set, get) => ({
@@ -48,5 +52,7 @@ export const useGiftGeneratorFormStore = create<Store>()((set, get) => ({
 	setStep: step => set({ step }),
 	setGiftGenerationStatus: status => set({ giftGenerationStatus: status }),
 	setResults: results => set({ results }),
+	setCleanResults: results => set({ cleanResults: results }),
+	clearResults: () => set({ results: null, cleanResults: null }),
 	resetStore: () => set({ ...initialState })
 }))

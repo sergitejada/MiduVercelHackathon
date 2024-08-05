@@ -13,12 +13,11 @@ interface Props {
 	description?: string
 	img?: string
 	isFlipped?: boolean
-	key?: string
 }
 
 const fallbackImage = "/assets/present.svg"
 
-export default function CardNewGeneration({ name, description, img, isFlipped: initIsFlipped, key }: Props) {
+export default function CardNewGeneration({ name, description, img, isFlipped: initIsFlipped }: Props) {
 	const [isFlipped, setIsFlipped] = useState(initIsFlipped || false)
 
 	function handleFlipCard() {

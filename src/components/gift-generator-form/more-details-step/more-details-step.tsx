@@ -10,6 +10,7 @@ import GiftGeneratorFormFooter from "../gift-generator-form-footer"
 export default function MoreDetailsStep() {
 	const gift = useGiftGeneratorFormStore(state => state.gift)
 	const setGift = useGiftGeneratorFormStore(state => state.setGift)
+	const clearResults = useGiftGeneratorFormStore(state => state.clearResults)
 
 	const textAreaRef = useRef<HTMLTextAreaElement>(null)
 
@@ -26,6 +27,8 @@ export default function MoreDetailsStep() {
 		setGift({
 			...newGift
 		})
+
+		clearResults()
 
 		await generateResults(newGift)
 	}

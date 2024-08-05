@@ -55,8 +55,8 @@ export default function FormGeneratorResultsSection() {
 								{results?.map((result, index) => (
 									<CardNewGeneration
 										key={result.id}
-										name={result.producto}
-										description={result.descripcion}
+										name={result.name}
+										description={result.description}
 										img={result.imageUrl}
 									/>
 								))}

@@ -27,5 +27,5 @@ export interface Gift {
 	id: string
 	name: string
 	description: string | undefined
-	images: string
+	imageUrl: string
 }

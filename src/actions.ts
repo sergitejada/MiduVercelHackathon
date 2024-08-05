@@ -36,7 +36,7 @@ export async function saveGifts(formattedParts: Gift[]) {
 			// Aplanar los datos
 			const values = data.flat()
 
-			const query = `INSERT INTO "Gifts" ("name", "description", "images") VALUES ${valuesPlaceholders}`
+			const query = `INSERT INTO "Gifts" ("name", "description", "imageUrl") VALUES ${valuesPlaceholders}`
 
 			await sql.query(query, values)
 

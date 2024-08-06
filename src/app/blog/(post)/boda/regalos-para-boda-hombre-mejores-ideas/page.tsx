@@ -49,14 +49,14 @@ export default function RegalosParaPage() {
 					Los gemelos son un accesorio clásico para cualquier traje de boda. Opta por gemelos personalizados con las
 					iniciales del novio o la fecha de la boda para darle un toque especial y significativo.
 				</p>
-				<CardProduct src={"/assets/royal-oak.jpg"} title={"Gemelos Personalizados"} description={""} link={""} />
+				<CardProduct src={"/assets/gemelos.webp"} title={"Gemelos Personalizados"} description={""} link={""} />
 				<h3 className="mt-6 font-semibold">3. Pluma Estilográfica</h3>
 				<p>
 					Una pluma estilográfica de alta calidad es un regalo ideal para un hombre que aprecia la escritura y la
 					elegancia. Marcas como Montblanc y Parker ofrecen opciones exquisitas que el novio puede usar en momentos
 					importantes de su vida.
 				</p>
-				<CardProduct src={"/assets/royal-oak.jpg"} title={"Pluma Estilográfica"} description={""} link={""} />
+				<CardProduct src={"/assets/pluma.jpg"} title={"Pluma Estilográfica"} description={""} link={""} />
 				{/*  */}
 				<h2 className="mt-6 font-bold">Regalos Tecnológicos para el Novio</h2>
 				<p>
@@ -69,7 +69,7 @@ export default function RegalosParaPage() {
 					como Apple, Samsung y Garmin ofrecen opciones que pueden rastrear la actividad física, recibir notificaciones
 					y mucho más.
 				</p>
-				<CardProduct src={"/assets/royal-oak.jpg"} title={"Smartwatch"} description={""} link={""} />
+				<CardProduct src={"/assets/smart.webp"} title={"Smartwatch"} description={""} link={""} />
 
 				<h3 className="mt-6 font-semibold">2. Auriculares Inalámbricos</h3>
 				<p>
@@ -77,7 +77,7 @@ export default function RegalosParaPage() {
 					para el novio que ama la música, los podcasts o simplemente necesita algo para hacer más llevaderos los
 					desplazamientos diarios.
 				</p>
-				<CardProduct src={"/assets/royal-oak.jpg"} title={"Auriculares Inalámbricos"} description={""} link={""} />
+				<CardProduct src={"/assets/auriculares.jpg"} title={"Auriculares Inalámbricos"} description={""} link={""} />
 
 				<h3 className="mt-6 font-semibold">3. Altavoz Inteligente</h3>
 				<p>
@@ -85,7 +85,7 @@ export default function RegalosParaPage() {
 					dispositivos no solo reproducen música, sino que también pueden controlar otros dispositivos inteligentes en
 					el hogar, hacer preguntas y mucho más.
 				</p>
-				<CardProduct src={"/assets/royal-oak.jpg"} title={"Altavoz Inteligente"} description={""} link={""} />
+				<CardProduct src={"/assets/altavoz.jpg"} title={"Altavoz Inteligente"} description={""} link={""} />
 				{/*  */}
 				<h2 className="mt-6 font-bold">Conclusión</h2>
 				<p>

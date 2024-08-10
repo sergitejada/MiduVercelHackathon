@@ -1,6 +1,6 @@
 import { saveGifts } from "@/actions"
 import { useGiftGeneratorFormStore } from "@/store/gift-generator-form-store"
-import { Gift } from "@/types/types"
+import { AmazonProduct, Gift } from "@/types/types"
 import { useEffect } from "react"
 import { useAmazonApi } from "./use-amazon-api"
 
@@ -11,7 +11,7 @@ export const useCleanResults = () => {
 	const setCleanResults = useGiftGeneratorFormStore(state => state.setCleanResults)
 	const setGiftGenerationStatus = useGiftGeneratorFormStore(state => state.setGiftGenerationStatus)
 
-	const { fetchAmazonProduct } = useAmazonApi()
+	const { fetchAmazonProduct, scrappingAmazonProduct } = useAmazonApi()
 
 	useEffect(() => {
 		if (!results) return
@@ -30,7 +30,14 @@ export const useCleanResults = () => {
 				const formattedParts: Gift[] = []
 				for (let i = 0; i < parts.length; i++) {
 					let [producto, descripcion] = parts[i].split(":").map(part => part.trim())
-					const amazonProduct = await fetchAmazonProduct(producto)
+					let amazonProduct: AmazonProduct | null = null
+
+					try {
+						amazonProduct = await fetchAmazonProduct(producto)
+					} catch (error) {
+						amazonProduct = await scrappingAmazonProduct(producto)
+					}
+
 					if (producto && descripcion) {
 						formattedParts.push({
 							id: crypto.randomUUID(),

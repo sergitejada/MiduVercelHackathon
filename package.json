@@ -21,6 +21,7 @@
     "@vercel/postgres": "^0.9.0",
     "@vercel/speed-insights": "^1.0.12",
     "ai": "latest",
+    "cheerio": "^1.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.0",

@@ -37,7 +37,7 @@ export default function FormGeneratorResultsSection() {
 	if (status === "idle") return null
 
 	return (
-		<section ref={formGeneratorResultsRef} id="formGeneratorResults">
+		<section ref={formGeneratorResultsRef} id="formGeneratorResults" className="mt-60">
 			<div className="mb-40 min-h-[60rem] bg-orange-200 py-24">
 				<div className="container mx-auto flex w-full flex-col gap-20">
 					<h2 className="text-center text-4xl font-semibold">Resultados</h2>

@@ -9,6 +9,7 @@ import GiftGeneratorFormFooter from "../gift-generator-form-footer"
 
 export default function MoreDetailsStep() {
 	const gift = useGiftGeneratorFormStore(state => state.gift)
+	const giftGenerationStatus = useGiftGeneratorFormStore(state => state.giftGenerationStatus)
 	const setGift = useGiftGeneratorFormStore(state => state.setGift)
 	const clearResults = useGiftGeneratorFormStore(state => state.clearResults)
 
@@ -43,7 +44,9 @@ export default function MoreDetailsStep() {
 				<Textarea ref={textAreaRef} className="w-full" maxLength={600} rows={8} defaultValue={gift?.moreDetails} />
 			</div>
 			<GiftGeneratorFormFooter>
-				<Button onClick={handleGenerate}>Generate</Button>
+				<Button onClick={handleGenerate} disabled={giftGenerationStatus === "generating"}>
+					Generate
+				</Button>
 			</GiftGeneratorFormFooter>
 		</>
 	)
